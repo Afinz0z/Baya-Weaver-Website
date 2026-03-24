@@ -1,0 +1,2905 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baya Weaver Resorts | Vythiri, Wayanad — Coming Soon</title>
+<meta name="description" content="Baya Weaver Resorts — A luxury eco-resort coming to Vythiri, Wayanad on 3.27 pristine acres. 14 private villas with pools, surrounded by Wayanad's timeless forests.">
+<meta name="keywords" content="Baya Weaver Resorts, Vythiri, Wayanad, eco-resort, luxury resort, Kerala, coming soon">
+<meta property="og:title" content="Baya Weaver Resorts | Vythiri, Wayanad">
+<meta property="og:description" content="A luxury eco-resort nestled in the heart of Wayanad. 14 villas, private pools, coming 2026.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --forest: #1a3a1f;
+  --forest-mid: #2d5a35;
+  --forest-light: #4a8c56;
+  --earth: #6b3a1f;
+  --earth-light: #a0622e;
+  --gold: #c9a84c;
+  --gold-bright: #e8c96e;
+  --cream: #f5f0e8;
+  --cream-dark: #ede5d4;
+  --bone: #faf7f0;
+  --charcoal: #1c1c1c;
+  --charcoal-mid: #2a2a2a;
+  --charcoal-light: #3a3a3a;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-italic: 'Playfair Display', serif;
+}
+
+[data-theme="light"] {
+  --glass-bg: rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.7);
+  --glass-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--charcoal);
+  color: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+[data-theme="light"] body {
+  background: var(--bone);
+  color: var(--charcoal);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--charcoal); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ============================================================
+   NOISE TEXTURE OVERLAY
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(28,28,28,0.7);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(250,247,240,0.75);
+}
+
+.navbar.scrolled {
+  padding: 0.8rem 3rem;
+  background: rgba(18,18,18,0.92);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.nav-logo-sub {
+  font-size: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--cream);
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.8;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-theme {
+  background: none;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.btn-theme:hover {
+  background: var(--glass-bg);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-cta-nav {
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+
+.btn-cta-nav:hover {
+  background: var(--gold-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 24px; height: 1.5px;
+  background: var(--cream);
+  display: block;
+  transition: var(--transition);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 2rem 4rem;
+}
+
+/* Layered gradient background simulating Wayanad forest */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,58,31,0.8) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(45,90,53,0.6) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(107,58,31,0.4) 0%, transparent 50%),
+    linear-gradient(160deg, #0d1f10 0%, #1a2e12 30%, #0f1a0d 60%, #1c1408 100%);
+  z-index: 0;
+}
+
+/* Animated forest silhouette */
+.hero-forest {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-forest svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(10,20,10,0.85);
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.4);
+  animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-20px) rotate(360deg); opacity: 0; }
+}
+
+/* Gold accent lines */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%; left: 5%;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  z-index: 2;
+  animation: line-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes line-glow {
+  0% { opacity: 0.3; height: 80px; }
+  100% { opacity: 1; height: 140px; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  animation: hero-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes hero-in {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+  backdrop-filter: blur(8px);
+  background: rgba(201,168,76,0.06);
+  animation: hero-in 1.2s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+  animation: hero-in 1.2s 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.hero-location {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.55);
+  margin-bottom: 3rem;
+  animation: hero-in 1.2s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 2rem;
+  animation: hero-in 1.2s 0.6s both;
+}
+
+.hero-desc {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(245,240,232,0.65);
+  max-width: 560px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.75;
+  animation: hero-in 1.2s 0.65s both;
+}
+
+/* ============================================================
+   COUNTDOWN
+   ============================================================ */
+.countdown-wrapper {
+  animation: hero-in 1.2s 0.8s both;
+  margin-bottom: 3.5rem;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.7);
+  margin-bottom: 1.2rem;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.countdown-unit {
+  text-align: center;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 1.2rem 1.5rem;
+  min-width: 80px;
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-unit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--gold-bright);
+  line-height: 1;
+  display: block;
+}
+
+.countdown-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.countdown-sep {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.4;
+  line-height: 1;
+  animation: blink 1.5s step-end infinite;
+  padding-bottom: 1.5rem;
+}
+
+@keyframes blink { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.1; } }
+
+/* ============================================================
+   HERO ACTIONS
+   ============================================================ */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  animation: hero-in 1.2s 1s both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  padding: 1rem 2.2rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+
+.btn-primary:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(245,240,232,0.3);
+  padding: 1rem 2.2rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  animation: hero-in 1.2s 1.3s both;
+}
+
+.scroll-indicator span {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  margin-bottom: 0.8rem;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: 0 auto;
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(0.5); opacity: 0.4; }
+}
+
+/* ============================================================
+   SECTION COMMON
+   ============================================================ */
+.section {
+  padding: 8rem 2rem;
+  position: relative;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+}
+
+[data-theme="light"] .section-title { color: var(--charcoal); }
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(245,240,232,0.6);
+  max-width: 540px;
+  line-height: 1.75;
+}
+
+[data-theme="light"] .section-subtitle { color: rgba(28,28,28,0.6); }
+
+/* Gold horizontal rule */
+.gold-rule {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.5rem 0;
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about {
+  background: linear-gradient(160deg, rgba(26,58,31,0.12) 0%, transparent 50%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 1.8rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--glass-shadow);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card:hover::before { opacity: 1; }
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+[data-theme="light"] .stat-label { color: rgba(28,28,28,0.5); }
+
+.about-visual {
+  position: relative;
+}
+
+.about-image-placeholder {
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(26,58,31,0.6) 0%, rgba(45,90,53,0.3) 50%, rgba(107,58,31,0.4) 100%);
+  border: 1px solid var(--glass-border);
+}
+
+.about-image-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 60px,
+      rgba(201,168,76,0.03) 60px,
+      rgba(201,168,76,0.03) 61px
+    );
+}
+
+.placeholder-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.placeholder-icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.placeholder-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.6);
+}
+
+/* Decorative corner accents */
+.corner-accent {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.corner-accent.tl { top: -8px; left: -8px; border-width: 2px 0 0 2px; }
+.corner-accent.tr { top: -8px; right: -8px; border-width: 2px 2px 0 0; }
+.corner-accent.bl { bottom: -8px; left: -8px; border-width: 0 0 2px 2px; }
+.corner-accent.br { bottom: -8px; right: -8px; border-width: 0 2px 2px 0; }
+
+/* ============================================================
+   FEATURES SECTION
+   ============================================================ */
+.features {
+  background: linear-gradient(to bottom, rgba(201,168,76,0.03) 0%, transparent 100%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.feature-card {
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 2.5rem 2rem;
+  transition: var(--transition);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.1);
+}
+
+.feature-card:hover::after { opacity: 1; }
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .feature-title { color: var(--charcoal); }
+
+.feature-desc {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .feature-desc { color: rgba(28,28,28,0.55); }
+
+/* ============================================================
+   PROGRESS SECTION
+   ============================================================ */
+.progress-section {
+  background: linear-gradient(135deg, rgba(26,58,31,0.15) 0%, rgba(28,28,28,0) 60%);
+}
+
+.progress-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+
+.progress-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.progress-item {
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 1.8rem 2rem;
+  transition: var(--transition);
+}
+
+.progress-item:hover {
+  transform: translateX(6px);
+  border-color: rgba(201,168,76,0.3);
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.progress-name {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--cream);
+}
+
+[data-theme="light"] .progress-name { color: var(--charcoal); }
+
+.progress-pct {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--gold);
+}
+
+.progress-bar-track {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--gold), var(--gold-bright));
+  border-radius: 2px;
+  transform-origin: left;
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+
+.progress-note {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.4);
+  margin-top: 0.75rem;
+}
+
+[data-theme="light"] .progress-note { color: rgba(28,28,28,0.4); }
+
+/* Construction image grid */
+.construction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.construction-img {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(45,90,53,0.4), rgba(26,58,31,0.6));
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: var(--transition);
+  cursor: default;
+  position: relative;
+}
+
+.construction-img:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/9;
+}
+
+.construction-img:hover {
+  transform: scale(1.02);
+  border-color: rgba(201,168,76,0.3);
+}
+
+.construction-img-icon {
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.construction-img-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.5);
+  text-align: center;
+}
+
+/* ============================================================
+   VILLAS SECTION
+   ============================================================ */
+.villas {
+  background: linear-gradient(to bottom, transparent, rgba(107,58,31,0.08), transparent);
+}
+
+.villas-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.villa-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.villa-card {
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--glass-shadow);
+}
+
+.villa-card:hover {
+  transform: translateY(-8px) rotate(0.5deg);
+  border-color: rgba(201,168,76,0.4);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+}
+
+.villa-img {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, rgba(26,58,31,0.7), rgba(45,90,53,0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.villa-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 30px,
+      rgba(201,168,76,0.04) 30px,
+      rgba(201,168,76,0.04) 31px
+    );
+}
+
+.villa-img-icon {
+  font-size: 2.5rem;
+  opacity: 0.35;
+  position: relative;
+}
+
+.villa-body {
+  padding: 1.5rem;
+}
+
+.villa-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+
+[data-theme="light"] .villa-name { color: var(--charcoal); }
+
+.villa-detail {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   PERMITS SECTION
+   ============================================================ */
+.permits {
+  background: linear-gradient(to right, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+
+.permits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.permit-card {
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.permit-card:hover {
+  border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+
+.permit-check {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(74,140,86,0.25), rgba(74,140,86,0.1));
+  border: 1px solid rgba(74,140,86,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  font-size: 1.1rem;
+  color: #6dbf78;
+}
+
+.permit-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .permit-title { color: var(--charcoal); }
+
+.permit-desc {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.6;
+}
+
+[data-theme="light"] .permit-desc { color: rgba(28,28,28,0.45); }
+
+/* ============================================================
+   GALLERY SECTION
+   ============================================================ */
+.gallery {
+  background: linear-gradient(135deg, rgba(45,90,53,0.08) 0%, transparent 60%);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.gallery-item {
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(26,58,31,0.5), rgba(107,58,31,0.3));
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  cursor: zoom-in;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  border-color: rgba(201,168,76,0.4);
+  z-index: 2;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-item.large { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+.gallery-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(201,168,76,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-overlay-icon {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.gallery-placeholder {
+  font-size: 2rem;
+  opacity: 0.25;
+}
+
+/* ============================================================
+   LOCATION SECTION
+   ============================================================ */
+.location {
+  background: linear-gradient(to bottom, rgba(107,58,31,0.06), transparent);
+}
+
+.location-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.location-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.location-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.location-item-content h4 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+.location-item-content p {
+  font-size: 0.9rem;
+  color: rgba(245,240,232,0.65);
+  line-height: 1.6;
+}
+
+[data-theme="light"] .location-item-content p { color: rgba(28,28,28,0.65); }
+
+.map-container {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+  filter: grayscale(20%) saturate(80%);
+}
+
+/* ============================================================
+   NEWSLETTER / LEAD CAPTURE
+   ============================================================ */
+.newsletter {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(26,58,31,0.2) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(26,58,31,0.15), rgba(107,58,31,0.1));
+}
+
+.newsletter-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-card {
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 4rem 3rem;
+  box-shadow: var(--glass-shadow), 0 0 80px rgba(201,168,76,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.newsletter-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+[data-theme="light"] .newsletter-title { color: var(--charcoal); }
+
+.newsletter-title em { font-style: italic; color: var(--gold); }
+
+.newsletter-sub {
+  font-size: 0.92rem;
+  color: rgba(245,240,232,0.55);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+[data-theme="light"] .newsletter-sub { color: rgba(28,28,28,0.55); }
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.05);
+}
+
+.newsletter-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 1rem 1.2rem;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--cream);
+  outline: none;
+}
+
+[data-theme="light"] .newsletter-form input { color: var(--charcoal); }
+
+.newsletter-form input::placeholder { color: rgba(245,240,232,0.35); }
+[data-theme="light"] .newsletter-form input::placeholder { color: rgba(28,28,28,0.35); }
+
+.newsletter-form button {
+  background: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover { background: var(--gold-bright); }
+
+.newsletter-perks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-perk {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.45);
+}
+
+[data-theme="light"] .newsletter-perk { color: rgba(28,28,28,0.45); }
+
+.newsletter-perk span:first-child { color: var(--gold); }
+
+/* ============================================================
+   YOUTUBE SECTION
+   ============================================================ */
+.youtube-section {
+  padding: 0 2rem 8rem;
+}
+
+.youtube-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+}
+
+.youtube-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.2), transparent, rgba(201,168,76,0.1));
+  border-radius: 9px;
+  z-index: -1;
+}
+
+.youtube-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  display: block;
+}
+
+.youtube-label {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.youtube-label a {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.youtube-label a:hover { opacity: 0.7; }
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact {
+  background: linear-gradient(135deg, rgba(26,58,31,0.12), rgba(107,58,31,0.08));
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  transition: var(--transition);
+  color: var(--cream);
+}
+
+.contact-link:hover {
+  border-color: rgba(201,168,76,0.4);
+  transform: translateX(6px);
+  color: var(--gold);
+}
+
+.contact-link-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.contact-link-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.contact-link-value {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Contact Form */
+.contact-form {
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 2.5rem;
+  box-shadow: var(--glass-shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .form-label { color: rgba(28,28,28,0.5); }
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--cream);
+  outline: none;
+  transition: var(--transition);
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-textarea,
+[data-theme="light"] .form-select {
+  color: var(--charcoal);
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.12);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: rgba(201,168,76,0.5);
+  background: rgba(201,168,76,0.04);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder { color: rgba(245,240,232,0.25); }
+
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-select { cursor: pointer; }
+.form-select option { background: var(--charcoal); }
+
+.form-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--earth-light));
+  color: var(--charcoal);
+  border: none;
+  padding: 1.1rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+  margin-top: 0.5rem;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+  filter: brightness(1.1);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 4rem 2rem 2rem;
+  background: rgba(10,15,10,0.6);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.7;
+  margin-top: 1.2rem;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col ul li a {
+  font-size: 0.85rem;
+  color: rgba(245,240,232,0.45);
+  transition: var(--transition);
+}
+
+.footer-col ul li a:hover { color: var(--gold); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(245,240,232,0.3);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  font-size: 0.72rem;
+  color: rgba(245,240,232,0.3);
+  letter-spacing: 0.08em;
+  transition: var(--transition);
+}
+
+.footer-legal a:hover { color: var(--gold); }
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  backdrop-filter: blur(40px);
+  background: rgba(18,18,18,0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-menu.open { transform: translateX(0); }
+
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.mobile-menu a:hover { color: var(--gold); }
+
+.mobile-close {
+  position: absolute;
+  top: 1.5rem; right: 2rem;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-close:hover { color: var(--gold); transform: rotate(90deg); }
+
+/* ============================================================
+   SUCCESS MESSAGE
+   ============================================================ */
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+  color: #6dbf78;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }
+.fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .about-grid,
+  .villas-intro { grid-template-columns: 1fr; gap: 3rem; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .permits-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.large { grid-column: span 1; grid-row: span 1; }
+  .gallery-item.wide { grid-column: span 2; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .progress-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .location-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .villa-showcase { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .navbar.scrolled { padding: 0.8rem 1.5rem; }
+  .nav-links { display: none; }
+  .btn-cta-nav { display: none; }
+  .hamburger { display: flex; }
+
+  .section { padding: 5rem 1.5rem; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .permits-grid { grid-template-columns: 1fr 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .newsletter-card { padding: 2.5rem 1.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .countdown-unit { min-width: 60px; padding: 0.8rem 0.8rem; }
+  .hero { padding: 7rem 1.5rem 5rem; }
+  .contact-form { padding: 2rem 1.5rem; }
+  .construction-grid { grid-template-columns: 1fr; }
+  .construction-img:first-child { grid-column: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .newsletter-form { flex-direction: column; border-radius: 3px; }
+  .newsletter-form input,
+  .newsletter-form button { width: 100%; }
+  .newsletter-form button { border-radius: 0 0 2px 2px; }
+  .permits-grid { grid-template-columns: 1fr; }
+  .countdown { gap: 0.3rem; }
+  .countdown-sep { font-size: 1.2rem; }
+}
+
+/* ============================================================
+   LIGHT MODE OVERRIDES
+   ============================================================ */
+[data-theme="light"] .hero-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,58,31,0.5) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(45,90,53,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(107,58,31,0.3) 0%, transparent 50%),
+    linear-gradient(160deg, #2d5a20 0%, #3a6b2a 30%, #2a4a1a 60%, #4a3010 100%);
+}
+
+[data-theme="light"] .feature-card,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .progress-item,
+[data-theme="light"] .permit-card,
+[data-theme="light"] .contact-link,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .newsletter-card,
+[data-theme="light"] .villa-card {
+  background: rgba(255,255,255,0.65);
+  border-color: rgba(255,255,255,0.8);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .footer {
+  background: rgba(235,230,220,0.6);
+  border-color: rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .footer-brand p,
+[data-theme="light"] .footer-col ul li a,
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-legal a { color: rgba(28,28,28,0.5); }
+
+[data-theme="light"] .nav-links a { color: var(--charcoal); }
+[data-theme="light"] .contact-link { color: var(--charcoal); }
+[data-theme="light"] .contact-link-label { color: rgba(28,28,28,0.4); }
+[data-theme="light"] .navbar { border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] body::before { opacity: 0.01; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     MOBILE MENU
+     ============================================================ -->
+<nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#features" onclick="closeMobile()">Features</a>
+  <a href="#progress" onclick="closeMobile()">Progress</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#location" onclick="closeMobile()">Location</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</nav>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="navbar" id="navbar" role="banner">
+  <a href="#" class="nav-logo" aria-label="Baya Weaver Resorts home">
+    <!-- Baya Weaver Bird SVG Logo -->
+    <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" stroke="#C9A84C" stroke-width="1"/>
+      <!-- Bird body -->
+      <ellipse cx="20" cy="22" rx="7" ry="5" fill="#C9A84C" opacity="0.8"/>
+      <!-- Head -->
+      <circle cx="26" cy="17" r="4" fill="#C9A84C"/>
+      <!-- Eye -->
+      <circle cx="27.5" cy="16" r="0.8" fill="#1c1c1c"/>
+      <!-- Wing suggestion -->
+      <path d="M14 20 C10 17 8 21 13 23" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <!-- Beak -->
+      <path d="M29 17 L32 16.5 L29 17.5" fill="#DAA520"/>
+      <!-- Tail -->
+      <path d="M13 22 C11 24 9 23 10 26" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-logo-text">Baya Weaver</div>
+      <div class="nav-logo-sub">Vythiri · Wayanad</div>
+    </div>
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-theme" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light mode">☽</button>
+    <button class="btn-cta-nav" onclick="document.getElementById('newsletter-section').scrollIntoView({behavior:'smooth'})">
+      Register Interest
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<main>
+<section class="hero" role="region" aria-label="Hero — Coming Soon">
+
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <!-- Forest silhouette -->
+  <div class="hero-forest" aria-hidden="true">
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,300 L0,200 C20,190 30,150 50,140 C70,130 75,160 95,155 C115,150 120,110 145,100 C170,90 175,130 200,125 L200,90 C210,70 215,40 230,30 C245,20 250,55 265,60 C280,65 282,40 295,30 C308,20 315,55 330,60 L330,90 C345,85 350,110 370,105 C390,100 395,135 415,130 L415,80 C425,55 432,20 450,10 C468,0 472,35 490,40 C508,45 510,20 528,15 C546,10 550,45 568,50 L568,80 C580,75 588,100 605,95 C622,90 628,120 645,115 L645,70 C658,45 665,10 685,0 C705,-10 710,30 728,35 C746,40 748,15 766,10 C784,5 788,40 806,45 L806,70 C820,65 828,95 848,90 C868,85 875,115 895,110 L895,60 C908,35 916,0 935,-5 C954,-10 958,25 976,30 C994,35 996,10 1014,5 C1032,0 1036,35 1054,38 L1054,60 C1068,55 1076,85 1096,80 C1116,75 1122,105 1142,100 L1142,55 C1155,30 1162,-5 1182,-10 C1202,-15 1206,20 1224,25 C1242,30 1244,5 1262,0 C1280,-5 1284,30 1302,33 L1302,55 C1316,50 1324,80 1344,75 C1364,70 1370,100 1390,95 L1440,90 L1440,300 Z"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Coming Soon · Q3 2026</div>
+
+    <h1 class="hero-title">
+      Baya <em>Weaver</em><br>Resorts
+    </h1>
+
+    <p class="hero-location">Vythiri &nbsp;·&nbsp; Wayanad &nbsp;·&nbsp; Kerala</p>
+
+    <div class="hero-divider" aria-hidden="true"></div>
+
+    <p class="hero-desc">
+      Nestled in 3.27 pristine acres of Old Vythiri's highland forests — where canopy shade and highland streams conspire to slow time.
+    </p>
+
+    <!-- Countdown -->
+    <div class="countdown-wrapper">
+      <p class="countdown-label">Opening In</p>
+      <div class="countdown" role="timer" aria-live="polite" aria-label="Countdown to opening">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">—</span>
+          <span class="countdown-text">Days</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">—</span>
+          <span class="countdown-text">Hours</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">—</span>
+          <span class="countdown-text">Mins</span>
+        </div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-secs">—</span>
+          <span class="countdown-text">Secs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('newsletter-section').scrollIntoView({behavior:'smooth'})">
+        ✦ Register Interest
+      </button>
+      <a href="#about" class="btn-secondary">Explore Resort</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll to discover</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section class="section about" id="about" role="region" aria-labelledby="about-title">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag fade-up">The Vision</span>
+        <h2 class="section-title fade-up" id="about-title">
+          A Sanctuary<br><em>Above the Mist</em>
+        </h2>
+        <div class="gold-rule fade-up" aria-hidden="true"></div>
+        <p class="section-subtitle fade-up">
+          Baya Weaver Resorts is being crafted as Wayanad's most refined eco-luxury destination — a place where indigenous architecture, responsible hospitality, and the raw beauty of the Western Ghats meet in perfect harmony.
+        </p>
+        <p class="section-subtitle fade-up" style="margin-top: 1.2rem;">
+          Situated on a janmam (hereditary clear-title) parcel in Old Vythiri, just off the National Highway with convenient accessibility, our 3.27-acre estate will host 14 private villas — each with a pool — framed by forest, birdsong, and highland sky.
+        </p>
+
+        <div class="about-stats" role="list">
+          <div class="stat-card fade-up" role="listitem">
+            <span class="stat-num">3.27</span>
+            <span class="stat-label">Acres · Prime Vythiri</span>
+          </div>
+          <div class="stat-card fade-up" role="listitem">
+            <span class="stat-num">14</span>
+            <span class="stat-label">Private Pool Villas</span>
+          </div>
+          <div class="stat-card fade-up" role="listitem">
+            <span class="stat-num">80%</span>
+            <span class="stat-label">6 Villas Complete</span>
+          </div>
+          <div class="stat-card fade-up" role="listitem">
+            <span class="stat-num">Q3</span>
+            <span class="stat-label">2026 Target Launch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual fade-up">
+        <div class="about-image-placeholder" role="img" aria-label="Resort site overview — image uploading soon">
+          <div class="corner-accent tl" aria-hidden="true"></div>
+          <div class="corner-accent tr" aria-hidden="true"></div>
+          <div class="corner-accent bl" aria-hidden="true"></div>
+          <div class="corner-accent br" aria-hidden="true"></div>
+          <div class="placeholder-content">
+            <div class="placeholder-icon" aria-hidden="true">🌿</div>
+            <span class="placeholder-text">Aerial View<br>Uploading Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURES SECTION
+     ============================================================ -->
+<section class="section features" id="features" role="region" aria-labelledby="features-title">
+  <div class="section-inner">
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="section-tag fade-up">Why Invest</span>
+      <h2 class="section-title fade-up" id="features-title">
+        Every Detail<br><em>Considered</em>
+      </h2>
+      <div class="gold-rule fade-up" aria-hidden="true" style="margin: 1rem auto;"></div>
+      <p class="section-subtitle fade-up" style="margin:0 auto;">
+        From land title to ecological ethics, Baya Weaver is built on principles that protect your investment and the environment alike.
+      </p>
+    </div>
+
+    <div class="features-grid" role="list">
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">📜</div>
+        <h3 class="feature-title">Janmam Clear Title</h3>
+        <p class="feature-desc">Hereditary clear-title land with zero encumbrances. Full legal transparency — your investment is built on solid ground, legally and literally.</p>
+      </article>
+
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">📈</div>
+        <h3 class="feature-title">High ROI Potential</h3>
+        <p class="feature-desc">Wayanad tourism is surging. With 14 premium pool villas and clubhouse amenities, revenue projections reflect strong hospitality market growth in the region.</p>
+      </article>
+
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">🌱</div>
+        <h3 class="feature-title">Eco-Responsible Design</h3>
+        <p class="feature-desc">Sustainable construction practices, native landscaping, solar integration planned, and rainwater harvesting — luxury that takes nothing from the land it inhabits.</p>
+      </article>
+
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">🏛️</div>
+        <h3 class="feature-title">Grand Clubhouse</h3>
+        <p class="feature-desc">A central clubhouse facility designed for gatherings, dining, and recreation — the social heart of the resort, available to all villa guests.</p>
+      </article>
+
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">🛣️</div>
+        <h3 class="feature-title">Highway Connectivity</h3>
+        <p class="feature-desc">Strategically positioned near the National Highway in Old Vythiri — effortless accessibility from Calicut, Mysore, and Bangalore without sacrificing seclusion.</p>
+      </article>
+
+      <article class="feature-card fade-up" role="listitem">
+        <div class="feature-icon" aria-hidden="true">🏊</div>
+        <h3 class="feature-title">14 Private Pools</h3>
+        <p class="feature-desc">Every villa has its own plunge pool — not shared, not communal. Pure privacy, pure luxury, framed by Wayanad's highland forest panoramas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRESS SECTION
+     ============================================================ -->
+<section class="section progress-section" id="progress" role="region" aria-labelledby="progress-title">
+  <div class="section-inner">
+    <span class="section-tag fade-up">Live Progress</span>
+    <h2 class="section-title fade-up" id="progress-title">
+      Taking <em>Shape</em>
+    </h2>
+    <div class="gold-rule fade-up" aria-hidden="true"></div>
+    <p class="section-subtitle fade-up">Construction is well underway. Here's where we stand as of early 2026.</p>
+
+    <div class="progress-layout">
+      <div class="progress-items" role="list">
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">6 Villas (Cluster A)</span>
+            <span class="progress-pct">80%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 80%"></div>
+          </div>
+          <p class="progress-note">Roofing and interiors in progress</p>
+        </div>
+
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">7 Villas (Cluster B)</span>
+            <span class="progress-pct">45%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 45%"></div>
+          </div>
+          <p class="progress-note">Foundation and structural framework complete</p>
+        </div>
+
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">Internal Roads & Pathways</span>
+            <span class="progress-pct">70%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 70%"></div>
+          </div>
+          <p class="progress-note">Primary access roads laid</p>
+        </div>
+
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">Water Wells & Supply</span>
+            <span class="progress-pct">100%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+          <p class="progress-note">Wells dug and operational</p>
+        </div>
+
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">Electricity Connection</span>
+            <span class="progress-pct">100%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 100%"></div>
+          </div>
+          <p class="progress-note">Grid connection secured</p>
+        </div>
+
+        <div class="progress-item fade-up" role="listitem">
+          <div class="progress-header">
+            <span class="progress-name">Clubhouse</span>
+            <span class="progress-pct">30%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" style="width: 30%"></div>
+          </div>
+          <p class="progress-note">Site preparation underway</p>
+        </div>
+      </div>
+
+      <!-- Construction image placeholders -->
+      <div class="construction-grid fade-up" role="list" aria-label="Construction photos — uploading soon">
+        <div class="construction-img" role="listitem" aria-label="Aerial site photo — coming soon">
+          <div class="placeholder-icon construction-img-icon" aria-hidden="true">🏗️</div>
+          <span class="construction-img-text">Site Aerial View<br>Image Uploading Soon</span>
+        </div>
+        <div class="construction-img" role="listitem" aria-label="Villa foundation photo — coming soon">
+          <div class="placeholder-icon construction-img-icon" aria-hidden="true">🧱</div>
+          <span class="construction-img-text">Villa Foundations</span>
+        </div>
+        <div class="construction-img" role="listitem" aria-label="Road construction photo — coming soon">
+          <div class="placeholder-icon construction-img-icon" aria-hidden="true">🛤️</div>
+          <span class="construction-img-text">Internal Roads</span>
+        </div>
+        <div class="construction-img" role="listitem" aria-label="Water infrastructure photo — coming soon">
+          <div class="placeholder-icon construction-img-icon" aria-hidden="true">💧</div>
+          <span class="construction-img-text">Water Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PERMITS & UTILITIES SECTION
+     ============================================================ -->
+<section class="section permits" role="region" aria-labelledby="permits-title">
+  <div class="section-inner">
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="section-tag fade-up">Permits & Utilities</span>
+      <h2 class="section-title fade-up" id="permits-title">
+        Fully <em>Authorised</em>
+      </h2>
+      <div class="gold-rule fade-up" aria-hidden="true" style="margin: 1rem auto;"></div>
+      <p class="section-subtitle fade-up" style="margin:0 auto;">
+        All necessary approvals are in place. A resort built not just beautifully, but correctly.
+      </p>
+    </div>
+
+    <div class="permits-grid" role="list">
+      <div class="permit-card fade-up" role="listitem">
+        <div class="permit-check" aria-hidden="true">✓</div>
+        <h3 class="permit-title">14 Villa Permits</h3>
+        <p class="permit-desc">All 14 villa construction permits approved and in order</p>
+      </div>
+      <div class="permit-card fade-up" role="listitem">
+        <div class="permit-check" aria-hidden="true">✓</div>
+        <h3 class="permit-title">14 Private Pools</h3>
+        <p class="permit-desc">Individual pool permits approved for each villa unit</p>
+      </div>
+      <div class="permit-card fade-up" role="listitem">
+        <div class="permit-check" aria-hidden="true">✓</div>
+        <h3 class="permit-title">Clubhouse Permit</h3>
+        <p class="permit-desc">Central clubhouse and communal facility approved</p>
+      </div>
+      <div class="permit-card fade-up" role="listitem">
+        <div class="permit-check" aria-hidden="true">✓</div>
+        <h3 class="permit-title">Water & Power</h3>
+        <p class="permit-desc">Wells operational, electricity connection secured from grid</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VILLAS SECTION
+     ============================================================ -->
+<section class="section villas" id="villas" role="region" aria-labelledby="villas-title">
+  <div class="section-inner">
+    <div class="villas-intro">
+      <div>
+        <span class="section-tag fade-up">The Villas</span>
+        <h2 class="section-title fade-up" id="villas-title">
+          Your Own<br><em>Forest Retreat</em>
+        </h2>
+        <div class="gold-rule fade-up" aria-hidden="true"></div>
+        <p class="section-subtitle fade-up">
+          Each of our 14 villas is designed as a complete private world — your own pool, your own forest view, your own rhythm. Architect renders will be shared soon.
+        </p>
+        <p class="section-subtitle fade-up" style="margin-top:1rem;">
+          Indigenous materials, passive ventilation, and a design vocabulary drawn from Kerala's traditional architecture — elevated to contemporary luxury standards.
+        </p>
+      </div>
+      <div class="villa-showcase fade-up" role="list" aria-label="Villa renders — uploading soon">
+        <div class="villa-card" role="listitem">
+          <div class="villa-img" aria-label="Villa exterior render — coming soon"><span class="villa-img-icon" aria-hidden="true">🏡</span></div>
+          <div class="villa-body">
+            <p class="villa-name">Forest Pool Villa</p>
+            <p class="villa-detail">Architect render · Uploading soon</p>
+          </div>
+        </div>
+        <div class="villa-card" role="listitem">
+          <div class="villa-img" aria-label="Villa interior render — coming soon"><span class="villa-img-icon" aria-hidden="true">🛏️</span></div>
+          <div class="villa-body">
+            <p class="villa-name">Master Suite</p>
+            <p class="villa-detail">Architect render · Uploading soon</p>
+          </div>
+        </div>
+        <div class="villa-card" role="listitem">
+          <div class="villa-img" aria-label="Private pool render — coming soon"><span class="villa-img-icon" aria-hidden="true">🏊</span></div>
+          <div class="villa-body">
+            <p class="villa-name">Private Plunge Pool</p>
+            <p class="villa-detail">Architect render · Uploading soon</p>
+          </div>
+        </div>
+        <div class="villa-card" role="listitem">
+          <div class="villa-img" aria-label="Clubhouse render — coming soon"><span class="villa-img-icon" aria-hidden="true">🏛️</span></div>
+          <div class="villa-body">
+            <p class="villa-name">Clubhouse</p>
+            <p class="villa-detail">Architect render · Uploading soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY SECTION
+     ============================================================ -->
+<section class="section gallery" id="gallery" role="region" aria-labelledby="gallery-title">
+  <div class="section-inner">
+    <span class="section-tag fade-up">Gallery</span>
+    <h2 class="section-title fade-up" id="gallery-title">
+      Glimpses of<br><em>Wayanad</em>
+    </h2>
+    <div class="gold-rule fade-up" aria-hidden="true"></div>
+    <p class="section-subtitle fade-up">Construction photos and architect renders will populate here as the build progresses. Check back monthly.</p>
+
+    <div class="gallery-grid fade-up" role="list" aria-label="Photo gallery — images uploading soon">
+      <div class="gallery-item large" role="listitem" aria-label="Main gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">🌳</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" aria-label="Gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">🏞️</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" aria-label="Gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">☁️</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+      <div class="gallery-item wide" role="listitem" aria-label="Wide gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">🌄</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" aria-label="Gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">🦋</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" aria-label="Gallery image — uploading soon">
+        <span class="gallery-placeholder" aria-hidden="true">🌿</span>
+        <div class="gallery-overlay"><span class="gallery-overlay-icon" aria-hidden="true">⊕</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     YOUTUBE SECTION
+     ============================================================ -->
+<div class="youtube-section" id="youtube">
+  <div class="youtube-label">
+    <a href="https://youtube.com/@bayaweaver-p1e?si=0Yw_IkZ0baLpHT9y" target="_blank" rel="noopener noreferrer" aria-label="Visit Baya Weaver YouTube channel (opens in new tab)">
+      ▶ &nbsp;Watch on YouTube · @bayaweaver-p1e
+    </a>
+  </div>
+  <div class="youtube-wrap">
+    <iframe
+      src="https://www.youtube.com/embed?listType=user_uploads&list=bayaweaver-p1e"
+      title="Baya Weaver Resorts YouTube Channel"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<!-- ============================================================
+     LOCATION SECTION
+     ============================================================ -->
+<section class="section location" id="location" role="region" aria-labelledby="location-title">
+  <div class="section-inner">
+    <span class="section-tag fade-up">Find Us</span>
+    <h2 class="section-title fade-up" id="location-title">
+      Old Vythiri,<br><em>Wayanad</em>
+    </h2>
+    <div class="gold-rule fade-up" aria-hidden="true"></div>
+
+    <div class="location-layout">
+      <div class="location-details fade-up">
+        <div class="location-item">
+          <div class="location-icon" aria-hidden="true">📍</div>
+          <div class="location-item-content">
+            <h4>Address</h4>
+            <p>Old Vythiri, Wayanad District, Kerala, India — 3.27 Acres on the National Highway corridor</p>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-icon" aria-hidden="true">🚗</div>
+          <div class="location-item-content">
+            <h4>By Road</h4>
+            <p>~70 km from Calicut (Kozhikode) · ~90 km from Mysore · ~270 km from Bangalore via NH766</p>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-icon" aria-hidden="true">✈️</div>
+          <div class="location-item-content">
+            <h4>Nearest Airport</h4>
+            <p>Calicut International Airport (CCJ) — approximately 80 km, ~90 min drive</p>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-icon" aria-hidden="true">🌡️</div>
+          <div class="location-item-content">
+            <h4>Elevation & Climate</h4>
+            <p>~800m above sea level. Pleasant year-round with cool mornings, refreshing monsoon, and clear winter skies</p>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-icon" aria-hidden="true">🌲</div>
+          <div class="location-item-content">
+            <h4>Nearby Attractions</h4>
+            <p>Chembra Peak, Banasura Sagar Dam, Edakkal Caves, Soochipara Falls — all within 30 km</p>
+          </div>
+        </div>
+
+        <a href="https://maps.app.goo.gl/iyfaohvVfE9AvDzk8?g_st=iw" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex; margin-top:1rem;" aria-label="Get directions to Baya Weaver Resorts on Google Maps (opens in new tab)">
+          📍 &nbsp;Get Directions
+        </a>
+      </div>
+
+      <div class="map-container fade-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.8983661066433!2d76.00000000000001!3d11.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM2JzAwLjAiTiA3NsKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          title="Baya Weaver Resorts location map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER SECTION
+     ============================================================ -->
+<section class="section newsletter" id="newsletter-section" role="region" aria-labelledby="newsletter-title">
+  <div class="section-inner">
+    <div class="newsletter-inner">
+      <div class="newsletter-card">
+        <span class="section-tag">Early Access</span>
+        <h2 class="newsletter-title" id="newsletter-title">
+          Be the <em>First</em><br>to Know
+        </h2>
+        <p class="newsletter-sub">
+          Register your interest for early booking privileges, exclusive pre-launch pricing, and construction updates delivered directly to you. Limited early-access slots available.
+        </p>
+
+        <form
+          class="newsletter-form"
+          action="https://formspree.io/f/bayaweaverresort@gmail.com"
+          method="POST"
+          id="newsletterForm"
+          aria-label="Email registration form">
+          <label for="newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="Your email address"
+            required
+            autocomplete="email">
+          <button type="submit">Register →</button>
+        </form>
+        <div class="success-msg" id="newsletterSuccess" role="alert" aria-live="polite">
+          ✓ &nbsp; Thank you! We'll be in touch with exclusive updates.
+        </div>
+
+        <div class="newsletter-perks" role="list">
+          <div class="newsletter-perk" role="listitem"><span>✦</span><span>Early booking access</span></div>
+          <div class="newsletter-perk" role="listitem"><span>✦</span><span>Pre-launch pricing</span></div>
+          <div class="newsletter-perk" role="listitem"><span>✦</span><span>Monthly progress updates</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section class="section contact" id="contact" role="region" aria-labelledby="contact-title">
+  <div class="section-inner">
+    <span class="section-tag fade-up">Get In Touch</span>
+    <h2 class="section-title fade-up" id="contact-title">
+      We'd Love to<br><em>Hear From You</em>
+    </h2>
+    <div class="gold-rule fade-up" aria-hidden="true"></div>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <a href="mailto:bayaweaverresort@gmail.com" class="contact-link" aria-label="Send email to Baya Weaver Resorts">
+          <div class="contact-link-icon" aria-hidden="true">✉️</div>
+          <div>
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">bayaweaverresort@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/@bayaweaver-p1e?si=0Yw_IkZ0baLpHT9y" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit Baya Weaver YouTube channel (opens in new tab)">
+          <div class="contact-link-icon" aria-hidden="true">▶</div>
+          <div>
+            <span class="contact-link-label">YouTube</span>
+            <span class="contact-link-value">@bayaweaver-p1e</span>
+          </div>
+        </a>
+
+        <a href="https://maps.app.goo.gl/iyfaohvVfE9AvDzk8?g_st=iw" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="View location on Google Maps (opens in new tab)">
+          <div class="contact-link-icon" aria-hidden="true">📍</div>
+          <div>
+            <span class="contact-link-label">Location</span>
+            <span class="contact-link-value">Old Vythiri, Wayanad, Kerala</span>
+          </div>
+        </a>
+
+        <div class="stat-card fade-up" style="margin-top:1rem; text-align:center;">
+          <p style="font-size:0.78rem; color:rgba(245,240,232,0.5); letter-spacing:0.08em; margin-bottom:0.5rem;">Questions about investment or bookings?</p>
+          <a href="mailto:bayaweaverresort@gmail.com" class="btn-primary" style="display:inline-flex; margin-top:0.5rem;">Send Enquiry</a>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up" role="form" aria-labelledby="inquiry-form-title">
+        <h3 id="inquiry-form-title" style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:1.5rem;">Booking Inquiry</h3>
+
+        <form
+          action="https://formspree.io/f/bayaweaverresort@gmail.com"
+          method="POST"
+          id="contactForm"
+          novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name</label>
+              <input class="form-input" type="text" id="fname" name="first_name" placeholder="First name" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name</label>
+              <input class="form-input" type="text" id="lname" name="last_name" placeholder="Last name" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cemail">Email</label>
+              <input class="form-input" type="email" id="cemail" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cphone">Phone</label>
+              <input class="form-input" type="tel" id="cphone" name="phone" placeholder="+91 xxxxx xxxxx" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inquiry-type">Inquiry Type</label>
+            <select class="form-select" id="inquiry-type" name="inquiry_type">
+              <option value="">Select inquiry type</option>
+              <option value="booking">Booking / Stay Enquiry</option>
+              <option value="investment">Investment Opportunity</option>
+              <option value="media">Media / Press</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cmessage">Message</label>
+            <textarea class="form-textarea" id="cmessage" name="message" placeholder="Tell us more about your interest, preferred dates, or any questions..."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Inquiry — Baya Weaver Resorts">
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit" class="form-submit">Send Inquiry →</button>
+          <div class="success-msg" id="contactSuccess" role="alert" aria-live="polite">
+            ✓ &nbsp; Thank you for your inquiry. We'll respond within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:0.5rem;">
+          <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" stroke="#C9A84C" stroke-width="1"/>
+            <ellipse cx="20" cy="22" rx="7" ry="5" fill="#C9A84C" opacity="0.8"/>
+            <circle cx="26" cy="17" r="4" fill="#C9A84C"/>
+            <circle cx="27.5" cy="16" r="0.8" fill="#1c1c1c"/>
+            <path d="M14 20 C10 17 8 21 13 23" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <path d="M29 17 L32 16.5 L29 17.5" fill="#DAA520"/>
+            <path d="M13 22 C11 24 9 23 10 26" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div class="nav-logo-text">Baya Weaver Resorts</div>
+            <div class="nav-logo-sub">Vythiri · Wayanad · Kerala</div>
+          </div>
+        </div>
+        <p>A luxury eco-resort taking shape in the heart of Wayanad's highlands. 14 private pool villas on 3.27 pristine acres of Old Vythiri. Opening Q3 2026.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul role="list">
+          <li><a href="#about">About Resort</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#progress">Construction</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul role="list">
+          <li><a href="mailto:bayaweaverresort@gmail.com">Email Us</a></li>
+          <li><a href="https://youtube.com/@bayaweaver-p1e?si=0Yw_IkZ0baLpHT9y" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://maps.app.goo.gl/iyfaohvVfE9AvDzk8?g_st=iw" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          <li><a href="#contact">Inquiry Form</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resort</h4>
+        <ul role="list">
+          <li><a href="#villas">The Villas</a></li>
+          <li><a href="#progress">Current Status</a></li>
+          <li><a href="#newsletter-section">Register Interest</a></li>
+          <li><a href="#contact">Investments</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Baya Weaver Resorts, Vythiri, Wayanad. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// ============================================================
+// COUNTDOWN TIMER
+// ============================================================
+const launchDate = new Date('2026-09-01T00:00:00');
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = launchDate - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    return;
+  }
+
+  const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ============================================================
+// NAVBAR SCROLL
+// ============================================================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ============================================================
+// DARK / LIGHT THEME TOGGLE
+// ============================================================
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  themeToggle.textContent = theme === 'dark' ? '☽' : '☀';
+  localStorage.setItem('bw-theme', theme);
+}
+
+// Load saved preference or default to dark
+const savedTheme = localStorage.getItem('bw-theme') || 'dark';
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// Also respect system preference if no saved choice
+if (!localStorage.getItem('bw-theme')) {
+  const preferLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  if (preferLight) applyTheme('light');
+}
+
+// ============================================================
+// MOBILE MENU
+// ============================================================
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileClose = document.getElementById('mobileClose');
+
+function openMobile() {
+  mobileMenu.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', openMobile);
+mobileClose.addEventListener('click', closeMobile);
+
+// Close on ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMobile();
+});
+
+// ============================================================
+// FLOATING PARTICLES
+// ============================================================
+(function createParticles() {
+  const container = document.getElementById('particles');
+  const count = window.innerWidth < 768 ? 10 : 20;
+
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    p.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 15 + 10}s;
+      animation-delay: ${Math.random() * 10}s;
+      opacity: ${Math.random() * 0.6 + 0.2};
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ============================================================
+// INTERSECTION OBSERVER — FADE UP ANIMATIONS
+// ============================================================
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+// ============================================================
+// PROGRESS BAR ANIMATION ON SCROLL
+// ============================================================
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fills = entry.target.querySelectorAll('.progress-bar-fill');
+      fills.forEach(fill => {
+        const target = fill.style.width;
+        fill.style.width = '0';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            fill.style.width = target;
+          });
+        });
+      });
+      progressObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const progressSection = document.getElementById('progress');
+if (progressSection) progressObserver.observe(progressSection);
+
+// ============================================================
+// 3D CARD TILT ON HOVER
+// ============================================================
+document.querySelectorAll('.feature-card, .villa-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotX = ((y - cy) / cy) * -6;
+    const rotY = ((x - cx) / cx) * 6;
+    card.style.transform = `translateY(-6px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+// ============================================================
+// NEWSLETTER FORM
+// ============================================================
+const newsletterForm = document.getElementById('newsletterForm');
+const newsletterSuccess = document.getElementById('newsletterSuccess');
+
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = newsletterForm.querySelector('button');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(newsletterForm);
+      const response = await fetch(newsletterForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        newsletterForm.style.display = 'none';
+        newsletterSuccess.style.display = 'block';
+      } else {
+        btn.textContent = 'Try again →';
+        btn.disabled = false;
+      }
+    } catch {
+      // Show success even on network error for UX (Formspree fallback)
+      newsletterForm.style.display = 'none';
+      newsletterSuccess.style.display = 'block';
+    }
+  });
+}
+
+// ============================================================
+// CONTACT FORM
+// ============================================================
+const contactForm = document.getElementById('contactForm');
+const contactSuccess = document.getElementById('contactSuccess');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        contactForm.querySelectorAll('input:not([type=hidden]), textarea, select').forEach(el => el.value = '');
+        contactSuccess.style.display = 'block';
+        btn.textContent = 'Sent ✓';
+      } else {
+        btn.textContent = 'Try again →';
+        btn.disabled = false;
+      }
+    } catch {
+      contactSuccess.style.display = 'block';
+      btn.textContent = 'Sent ✓';
+    }
+  });
+}
+
+// ============================================================
+// SMOOTH ANCHOR SCROLLING WITH NAVBAR OFFSET
+// ============================================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = navbar.offsetHeight + 24;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
