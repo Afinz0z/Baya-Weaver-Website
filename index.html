@@ -16,6 +16,50 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://bayaweaverresorts.com/">
 
+  <!-- Social Media & Open Graph -->
+  <meta property="og:url" content="https://bayaweaverresorts.com/">
+  <meta property="og:image" content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baya Weaver Resorts | Luxury Villas in Vythiri, Wayanad">
+  <meta name="twitter:description" content="14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate Green Land. 4 private pool villas, opening 2026.">
+  <meta name="twitter:image" content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
+  <meta name="theme-color" content="#1c1c1c">
+
+  <!-- Location & Geotagging -->
+  <meta name="geo.region" content="IN-KL">
+  <meta name="geo.placename" content="Vythiri, Wayanad">
+  <meta name="geo.position" content="11.60000;76.00000">
+  <meta name="ICBM" content="11.60000, 76.00000">
+
+  <!-- JSON-LD LocalBusiness / Resort Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Resort",
+    "name": "Baya Weaver Resorts",
+    "url": "https://bayaweaverresorts.com/",
+    "logo": "https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg",
+    "image": "https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg",
+    "description": "14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate Green Land in Vythiri, Wayanad. Opening 2026.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vythiri",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.6,
+      "longitude": 76.0
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "bayaweaverresort@gmail.com"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -290,7 +334,21 @@
       height: 1.5px;
       background: var(--cream);
       display: block;
-      transition: var(--transition);
+      transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s;
+      transform-origin: center;
+    }
+
+    .hamburger {
+      z-index: 1000;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
     }
 
     /* ============================================================
@@ -2035,35 +2093,28 @@
       font-weight: 300;
       color: var(--cream);
       letter-spacing: 0.05em;
-      transition: var(--transition);
+      transition: color 0.3s, opacity 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     .mobile-menu a:hover {
       color: var(--gold);
     }
 
-    .mobile-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      background: none;
-      border: 1px solid var(--glass-border);
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      color: var(--cream);
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .mobile-menu.open a {
+      animation: mobile-link-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
-    .mobile-close:hover {
-      color: var(--gold);
-      border-color: var(--gold);
-      transform: rotate(90deg);
+    .mobile-menu.open a:nth-child(1) { animation-delay: 0.1s; }
+    .mobile-menu.open a:nth-child(2) { animation-delay: 0.15s; }
+    .mobile-menu.open a:nth-child(3) { animation-delay: 0.2s; }
+    .mobile-menu.open a:nth-child(4) { animation-delay: 0.25s; }
+    .mobile-menu.open a:nth-child(5) { animation-delay: 0.3s; }
+    .mobile-menu.open a:nth-child(6) { animation-delay: 0.35s; }
+
+    @keyframes mobile-link-up {
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ============================================================
@@ -2351,7 +2402,6 @@
 
   <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#features" onclick="closeMobile()">Features</a>
     <a href="#progress" onclick="closeMobile()">Progress</a>
@@ -3267,21 +3317,23 @@
     // ============================================================
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    const mobileClose = document.getElementById('mobileClose');
 
     function openMobile() {
       mobileMenu.classList.add('open');
+      hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
     function closeMobile() {
       mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', openMobile);
-    mobileClose.addEventListener('click', closeMobile);
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMobile() : openMobile();
+    });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
 
     // Close when tapping the overlay backdrop (outside menu links)
