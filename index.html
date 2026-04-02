@@ -6,23 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baya Weaver Resorts | Luxury Villas in Vythiri, Wayanad — Opening 2026</title>
   <meta name="description"
-    content="Baya Weaver Resorts — 14 exclusive luxury villas on 3.27 pristine acres in Vythiri, Wayanad. 4 private pool villas, 1 open pool, and a grand clubhouse set within a Highland Tea Estate Green Land. Premium eco-luxury investment in Kerala's most sought-after highland destination.">
+    content="Baya Weaver Resorts — 14 exclusive luxury villas on 3.27 pristine acres in Vythiri, Wayanad. 4 private pool villas, 1 open pool, and a grand clubhouse set within a Highland Tea Estate. Premium eco-luxury investment in Kerala's most sought-after highland destination.">
   <meta name="keywords"
     content="luxury villas Wayanad, villas in Vythiri, Wayanad resort investment, private pool villas Wayanad, premium real estate Kerala, eco luxury villas Kerala, Baya Weaver Resorts, Vythiri resort, Wayanad highland villas, Kerala eco resort, resort investment Wayanad">
   <meta property="og:title" content="Baya Weaver Resorts | Luxury Villas in Vythiri, Wayanad">
   <meta property="og:description"
-    content="14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate Green Land. 4 private pool villas, opening 2026. Investment enquiries welcome.">
+    content="14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate. 4 private pool villas, opening 2026. Investment enquiries welcome.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://bayaweaverresorts.com/">
 
   <!-- Social Media & Open Graph -->
   <meta property="og:url" content="https://bayaweaverresorts.com/">
-  <meta property="og:image" content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
+  <meta property="og:image"
+    content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Baya Weaver Resorts | Luxury Villas in Vythiri, Wayanad">
-  <meta name="twitter:description" content="14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate Green Land. 4 private pool villas, opening 2026.">
-  <meta name="twitter:image" content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
+  <meta name="twitter:description"
+    content="14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate. 4 private pool villas, opening 2026.">
+  <meta name="twitter:image"
+    content="https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg">
   <meta name="theme-color" content="#1c1c1c">
 
   <!-- Location & Geotagging -->
@@ -40,11 +43,12 @@
     "url": "https://bayaweaverresorts.com/",
     "logo": "https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg",
     "image": "https://bayaweaverresorts.com/images/WhatsApp%20Image%202026-03-18%20at%206.25.19%20AM.jpeg",
-    "description": "14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate Green Land in Vythiri, Wayanad. Opening 2026.",
+    "description": "14 exclusive luxury villas on 3.27 pristine acres of Highland Tea Estate in Vythiri, Wayanad. Opening 2026.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Vythiri",
       "addressRegion": "Kerala",
+      "postalCode": "673576",
       "addressCountry": "IN"
     },
     "geo": {
@@ -60,6 +64,7 @@
   }
   </script>
 
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -327,6 +332,7 @@
       padding: 4px;
       background: none;
       border: none;
+      z-index: 1000;
     }
 
     .hamburger span {
@@ -338,15 +344,14 @@
       transform-origin: center;
     }
 
-    .hamburger {
-      z-index: 1000;
-    }
     .hamburger.open span:nth-child(1) {
       transform: translateY(6.5px) rotate(45deg);
     }
+
     .hamburger.open span:nth-child(2) {
       opacity: 0;
     }
+
     .hamburger.open span:nth-child(3) {
       transform: translateY(-6.5px) rotate(-45deg);
     }
@@ -1143,6 +1148,7 @@
 
     .construction-img:first-child {
       grid-column: 1 / -1;
+      aspect-ratio: 16/9;
     }
 
     .construction-img img {
@@ -1150,10 +1156,6 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease;
-    }
-
-    .construction-img:first-child {
-      aspect-ratio: 16/9;
     }
 
     .construction-img:not(:first-child) {
@@ -1781,6 +1783,74 @@
       display: block;
     }
 
+    .youtube-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .youtube-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.4s ease, transform 0.6s ease;
+    }
+
+    .youtube-thumb:hover img {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+
+    .youtube-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 56px;
+      background: rgba(204, 0, 0, 0.9);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .youtube-thumb:hover .youtube-play-btn {
+      background: rgba(255, 0, 0, 1);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .youtube-play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .youtube-thumb-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 1.5rem 1.2rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
     .youtube-label {
       text-align: center;
       margin-bottom: 2rem;
@@ -2106,15 +2176,35 @@
       animation: mobile-link-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
-    .mobile-menu.open a:nth-child(1) { animation-delay: 0.1s; }
-    .mobile-menu.open a:nth-child(2) { animation-delay: 0.15s; }
-    .mobile-menu.open a:nth-child(3) { animation-delay: 0.2s; }
-    .mobile-menu.open a:nth-child(4) { animation-delay: 0.25s; }
-    .mobile-menu.open a:nth-child(5) { animation-delay: 0.3s; }
-    .mobile-menu.open a:nth-child(6) { animation-delay: 0.35s; }
+    .mobile-menu.open a:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .mobile-menu.open a:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .mobile-menu.open a:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .mobile-menu.open a:nth-child(4) {
+      animation-delay: 0.25s;
+    }
+
+    .mobile-menu.open a:nth-child(5) {
+      animation-delay: 0.3s;
+    }
+
+    .mobile-menu.open a:nth-child(6) {
+      animation-delay: 0.35s;
+    }
 
     @keyframes mobile-link-up {
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ============================================================
@@ -2384,14 +2474,6 @@
       color: rgba(28, 28, 28, 0.5);
     }
 
-    [data-theme="light"] .nav-links a {
-      color: var(--charcoal);
-    }
-
-    [data-theme="light"] .contact-link {
-      color: var(--charcoal);
-    }
-
     [data-theme="light"] body::before {
       opacity: 0.01;
     }
@@ -2456,7 +2538,7 @@
       <!-- Real image layer -->
       <div class="hero-real-img" aria-hidden="true">
         <img src="images/WhatsApp%20Image%202026-03-18%20at%206.25.21%20AM.jpeg"
-          alt="Baya Weaver Resorts architect render — luxury villas on Highland Tea Estate Green Land, Vythiri Wayanad">
+          alt="Baya Weaver Resorts architect render — luxury villas on Highland Tea Estate, Vythiri Wayanad">
       </div>
 
       <div class="hero-bg" aria-hidden="true"></div>
@@ -2470,12 +2552,12 @@
       </div>
 
       <div class="hero-content">
-        <div class="hero-tag">Coming Soon · Q3 2026</div>
+        <div class="hero-tag">Coming Soon · Q4 2026</div>
 
         <h1 class="hero-title">Baya <em>Weaver</em><br>Resorts</h1>
 
         <p class="hero-location">Vythiri &nbsp;·&nbsp; Wayanad &nbsp;·&nbsp; Kerala</p>
-        <div class="hero-estate-tag">Highland Tea Estate · Green Land</div>
+        <div class="hero-estate-tag">Highland Tea Estate</div>
 
         <div class="hero-divider" aria-hidden="true"></div>
 
@@ -2536,15 +2618,15 @@
               architecture, responsible hospitality, and the raw beauty of the Western Ghats meet in perfect stillness.
             </p>
             <p class="section-subtitle fade-up" style="margin-top: 1.2rem;">
-              Situated in Old Vythiri on 3.27 acres of Highland Tea Estate Green Land, our estate hosts 14 exclusive
-              private villas — framed by green land, birdsong, and highland sky. 4 private pool villas on 3.27 acres,
+              Situated in Old Vythiri on 3.27 acres of Highland Tea Estate, our estate hosts 14 exclusive
+              private villas — framed by birdsong, and highland sky. 4 private pool villas on 3.27 acres,
               opening in the 2026 calendar year.
             </p>
 
             <div class="about-stats" role="list">
               <div class="stat-card fade-up" role="listitem">
                 <span class="stat-num">3.27</span>
-                <span class="stat-label">Acres · Tea Estate Green Land</span>
+                <span class="stat-label">Acres · Tea Estate</span>
               </div>
               <div class="stat-card fade-up" role="listitem">
                 <span class="stat-num">14</span>
@@ -2555,7 +2637,7 @@
                 <span class="stat-label">Private Pools + Open Pool</span>
               </div>
               <div class="stat-card fade-up" role="listitem">
-                <span class="stat-num">Q3</span>
+                <span class="stat-num">Q4</span>
                 <span class="stat-label">2026 Target Opening</span>
               </div>
             </div>
@@ -2615,7 +2697,7 @@
             <div class="feature-icon" aria-hidden="true">🌱</div>
             <h3 class="feature-title">Eco-Responsible Design</h3>
             <p class="feature-desc">Sustainable construction, native landscaping, solar integration, and rainwater
-              harvesting — luxury that takes nothing from the Highland Tea Estate Green Land it calls home.</p>
+              harvesting — luxury that takes nothing from the Highland Tea Estate it calls home.</p>
           </article>
 
           <article class="feature-card fade-up" role="listitem">
@@ -2684,7 +2766,7 @@
                 <span class="progress-name">7 Villas — Cluster B</span>
                 <span class="progress-status status-inprogress">Structural Stage</span>
               </div>
-              <p class="progress-note">Foundation and structural framework complete</p>
+              <p class="progress-note">Foundation and structural framework in active progress</p>
             </div>
 
             <div class="progress-item" role="listitem">
@@ -2730,7 +2812,7 @@
             </div>
             <div class="construction-img" role="listitem">
               <img src="images/WhatsApp%20Image%202026-03-22%20at%205.45.02%20PM.jpeg"
-                alt="Baya Weaver Resorts — villa construction aerial view within Highland Tea Estate Green Land, Wayanad">
+                alt="Baya Weaver Resorts — villa construction aerial view within Highland Tea Estate, Wayanad">
               <div class="construction-img-caption">Villa Cluster A</div>
             </div>
             <div class="construction-img" role="listitem">
@@ -2799,8 +2881,8 @@
             </h2>
             <div class="gold-rule fade-up" aria-hidden="true"></div>
             <p class="section-subtitle fade-up">
-              Each of our 14 villas is designed as a complete private world — framed by the Highland Tea Estate Green
-              Land, set at elevation, with unobstructed Western Ghats panoramas.
+              Each of our 14 villas is designed as a complete private world — framed by the Highland Tea Estate
+              , set at elevation, with unobstructed Western Ghats panoramas.
             </p>
             <p class="section-subtitle fade-up" style="margin-top:1rem;">
               4 villas feature fully private plunge pools — not shared, not communal. Designed for absolute privacy and
@@ -2818,7 +2900,7 @@
             <div class="villa-card" role="listitem">
               <div class="villa-img">
                 <img src="images/WhatsApp%20Image%202026-03-18%20at%206.25.20%20AM.jpeg"
-                  alt="Sky View Pool Villa exterior render — private luxury villa on Highland Tea Estate Green Land, Vythiri Wayanad">
+                  alt="Sky View Pool Villa exterior render — private luxury villa on Highland Tea Estate, Vythiri Wayanad">
               </div>
               <div class="villa-body">
                 <p class="villa-name">Sky View Pool Villa</p>
@@ -2920,12 +3002,17 @@
           ▶ &nbsp;Watch on YouTube · @bayaweaver-p1e
         </a>
       </div>
-      <div class="youtube-wrap">
-        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=bayaweaver-p1e"
-          title="Baya Weaver Resorts — Luxury Villas Vythiri Wayanad YouTube Channel"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy">
-        </iframe>
+      <div class="youtube-wrap" id="youtubePlayer">
+        <!-- Thumbnail fallback: always loads, click to play -->
+        <div class="youtube-thumb" id="youtubeThumb"
+          role="button" tabindex="0"
+          aria-label="Play video: Baya Weaver Resort, Vythiri, Wayanad, Kerala">
+          <img src="https://i.ytimg.com/vi/F8X-mcABL8U/maxresdefault.jpg"
+            alt="Baya Weaver Resort — Vythiri, Wayanad, Kerala"
+            onerror="this.src='https://i.ytimg.com/vi/F8X-mcABL8U/hqdefault.jpg'">
+          <div class="youtube-play-btn" aria-hidden="true"></div>
+          <div class="youtube-thumb-title">Baya Weaver Resort · Vythiri, Wayanad</div>
+        </div>
       </div>
     </div>
 
@@ -2944,7 +3031,7 @@
               <div class="location-icon" aria-hidden="true">📍</div>
               <div class="location-item-content">
                 <h4>Address</h4>
-                <p>Old Vythiri, Wayanad District, Kerala — 3.27 acres of Highland Tea Estate Green Land on the National
+                <p>Old Vythiri, Wayanad District, Kerala 673576 — 3.27 acres of Highland Tea Estate on the National
                   Highway corridor</p>
               </div>
             </div>
@@ -3028,7 +3115,7 @@
           <div class="map-container fade-up">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.8983661066433!2d76.00000000000001!3d11.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM2JzAwLjAiTiA3NsKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              title="Baya Weaver Resorts location — Old Vythiri, Wayanad, Kerala" loading="lazy" allowfullscreen
+              title="Baya Weaver Resorts location — Old Vythiri, Wayanad, Kerala, 673576" loading="lazy" allowfullscreen
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -3046,7 +3133,7 @@
               Be the <em>First</em><br>to Know
             </h2>
             <p class="newsletter-sub">
-              Register your interest for early booking privileges, exclusive pre-launch pricing, and monthly
+              Register your interest for early booking privileges, exclusive project trade, and monthly
               construction updates. Limited early-access positions available for this one-of-a-kind Wayanad luxury villa
               estate.
             </p>
@@ -3108,7 +3195,7 @@
               <div class="contact-link-icon" aria-hidden="true">📍</div>
               <div>
                 <span class="contact-link-label">Location</span>
-                <span class="contact-link-value">Old Vythiri, Wayanad, Kerala</span>
+                <span class="contact-link-value">Old Vythiri, Wayanad, Kerala 673576</span>
               </div>
             </a>
 
@@ -3117,7 +3204,7 @@
                 style="font-family:var(--font-display); font-size:1.2rem; font-weight:300; color:var(--cream); margin-bottom:0.5rem;">
                 Enquiries: Investment | Ownership | Bookings</p>
               <p style="font-size:0.8rem; color:rgba(245,240,232,0.5); margin-bottom:1.5rem;">Speak directly with our
-                team about ownership structures, investment terms, and site visits.</p>
+                team about ownership structures, investment terms, trade enquiries and site visits.</p>
               <a href="mailto:bayaweaverresort@gmail.com" class="btn-primary">Send an Enquiry →</a>
             </div>
           </div>
@@ -3126,8 +3213,7 @@
             <h3 id="inquiry-form-title"
               style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:0.5rem;">
               Booking &amp; Investment Inquiry</h3>
-            <p style="font-size:0.82rem; color:rgba(245,240,232,0.45); margin-bottom:2rem;">Our team responds within 24
-              hours</p>
+
 
             <form action="https://formspree.io/f/bayaweaverresort@gmail.com" method="POST" id="contactForm">
               <div class="form-row">
@@ -3164,6 +3250,7 @@
                   <option value="ownership">Villa Ownership</option>
                   <option value="site-visit">Book a Site Visit</option>
                   <option value="booking">Booking / Stay Enquiry</option>
+                  <option value="trade">Trade Enquiry</option>
                   <option value="brochure">Request Brochure</option>
                   <option value="media">Media / Press</option>
                   <option value="other">Other</option>
@@ -3212,7 +3299,7 @@
               <div class="nav-logo-sub">Vythiri · Wayanad · Kerala</div>
             </div>
           </div>
-          <p>An exclusive eco-luxury resort taking shape in the heart of Wayanad's Highland Tea Estate Green Land. 4
+          <p>An exclusive eco-luxury resort taking shape in the heart of Wayanad's Highland Tea Estate. 4
             private pool villas on 3.27 pristine acres of Old Vythiri. Opening in the 2026 calendar year.</p>
         </div>
 
@@ -3265,7 +3352,7 @@
     // ============================================================
     // COUNTDOWN TIMER
     // ============================================================
-    const launchDate = new Date('2026-09-01T00:00:00');
+    const launchDate = new Date('2026-10-01T00:00:00');
     function updateCountdown() {
       const now = new Date();
       const diff = launchDate - now;
@@ -3429,9 +3516,9 @@
             contactSuccess.style.display = 'block';
             btn.textContent = 'Sent ✓';
           } else { btn.textContent = 'Try again →'; btn.disabled = false; }
-        } catch { 
-      btn.textContent = 'Network Error. Try again →'; btn.disabled = false; 
-    }
+        } catch {
+          btn.textContent = 'Network Error. Try again →'; btn.disabled = false;
+        }
       });
     }
 
@@ -3448,6 +3535,80 @@
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
+
+    // ============================================================
+    // YOUTUBE CLICK-TO-PLAY WITH FALLBACKS
+    // ============================================================
+    (function () {
+      const videoId = 'F8X-mcABL8U';
+      const thumb = document.getElementById('youtubeThumb');
+      const player = document.getElementById('youtubePlayer');
+      if (!thumb || !player) return;
+
+      // Embed URLs to try, in order of preference
+      const embedUrls = [
+        `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`,
+        `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&origin=${encodeURIComponent(window.location.origin)}`,
+        `https://www.youtube.com/embed/${videoId}?autoplay=1`
+      ];
+      const directUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+      function tryEmbed(urlIndex) {
+        if (urlIndex >= embedUrls.length) {
+          // All embeds failed — open directly on YouTube
+          window.open(directUrl, '_blank', 'noopener,noreferrer');
+          // Restore the thumbnail so user can try again
+          thumb.style.display = '';
+          return;
+        }
+
+        // Hide thumbnail, create iframe
+        thumb.style.display = 'none';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = embedUrls[urlIndex];
+        iframe.title = 'Baya Weaver Resort — Vythiri, Wayanad, Kerala';
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;display:block;';
+
+        // Detect load failure via timeout + message listener
+        let loaded = false;
+        const timeout = setTimeout(() => {
+          if (!loaded) {
+            iframe.remove();
+            tryEmbed(urlIndex + 1);
+          }
+        }, 5000);
+
+        iframe.addEventListener('load', () => {
+          loaded = true;
+          clearTimeout(timeout);
+        });
+
+        iframe.addEventListener('error', () => {
+          clearTimeout(timeout);
+          iframe.remove();
+          tryEmbed(urlIndex + 1);
+        });
+
+        player.appendChild(iframe);
+      }
+
+      function handleClick() {
+        tryEmbed(0);
+      }
+
+      thumb.addEventListener('click', handleClick);
+      thumb.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick();
+        }
+      });
+    })();
   </script>
 
 </body>
