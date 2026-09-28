@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://afinz0z.github.io/Baya-Weaver-Website/</loc>
     <lastmod>2026-09-28</lastmod>
@@ -27,6 +28,14 @@
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-roof-slab.webp</image:loc></image:image>
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-shell.webp</image:loc></image:image>
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-villa-cluster.webp</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/F8X-mcABL8U/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Baya Weaver Resort, Vythiri, Wayanad, Kerala</video:title>
+      <video:description>A one-minute film introducing Baya Weaver Resort, coming soon in Vythiri, Wayanad, Kerala.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/F8X-mcABL8U</video:player_loc>
+      <video:duration>61</video:duration>
+      <video:publication_date>2025-07-19T08:45:01-07:00</video:publication_date>
+    </video:video>
   </url>
   <url>
     <loc>https://afinz0z.github.io/Baya-Weaver-Website/privacy.html</loc>

@@ -1,22 +1,31 @@
 # Baya Weaver Resorts
 
-> Pre-opening resort in Old Vythiri, Wayanad, Kerala, India: 14 villas (four with private plunge pools), one open pool and a clubhouse on 3.27 acres of Highland Tea Estate. Under construction; target opening Q4 2026. Designs by Sumayyasalih Architects.
+> Baya Weaver Resorts is a new resort under construction in Old Vythiri, Wayanad, Kerala, India. It will have 14 villas on 3.27 acres of Highland Tea Estate, four of them with private plunge pools, plus an open pool and a clubhouse. The resort is designed by Sumayyasalih Architects and has a target opening of Q4 2026.
 
-- Status: under construction (latest site update dated 22 March 2026). Bookings are not open yet.
-- Location: Old Vythiri, Wayanad District, Kerala 673576. Coordinates 11.535045, 76.038681.
+Not to be confused with the baya weaver bird (Ploceus philippinus).
+
+## Key facts
+
+- Status: under construction. Latest site update dated 22 March 2026. Target opening Q4 2026. Bookings are not open yet.
+- Location: Old Vythiri, Wayanad District, Kerala 673576, India. Coordinates 11.535045, 76.038681. About 800 m above sea level.
+- Site: 3.27 acres of Highland Tea Estate on the National Highway corridor.
+- Villas: 14. Four have private plunge pools. Designs shown include the 2BHK Pool Villa and the Single Bed Villa.
+- Shared facilities: one open pool and a clubhouse for dining, gatherings and recreation.
+- Architect: Sumayyasalih Architects. Images marked "render" are proposed designs, not finished buildings.
 - Getting there: about 80 km (around 90 minutes) from Calicut International Airport (CCJ); about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766.
-- Villa designs shown: 2BHK Pool Villa, Single Bed Villa. Images marked "render" are proposed designs.
-- Contact: bayaweaverresort@gmail.com
-- Enquiries accepted: site visits, villa ownership, investment, trade, future stays, brochure requests. The website does not take bookings or payments.
+- Contact: bayaweaverresort@gmail.com. Enquiries accepted for site visits, villa ownership, investment, trade, future stays and brochure requests.
+- The website does not take bookings or payments.
 
 ## Pages
 
-- [Home](https://afinz0z.github.io/Baya-Weaver-Website/): overview, construction progress, villas, gallery, location, questions and enquiry form.
+- [Home](https://afinz0z.github.io/Baya-Weaver-Website/): overview, construction progress, villas, gallery, location, key facts, questions and enquiry form.
+- [Full text for AI assistants](https://afinz0z.github.io/Baya-Weaver-Website/llms-full.txt): the site's content as plain Markdown.
 - [Privacy policy](https://afinz0z.github.io/Baya-Weaver-Website/privacy.html): what personal data the website collects and how it is used.
 - [Terms of use](https://afinz0z.github.io/Baya-Weaver-Website/terms.html): how to read renders, target dates and project information; no offer or advice.
 - [Accessibility statement](https://afinz0z.github.io/Baya-Weaver-Website/accessibility.html): accessibility measures and how to report a problem.
 
 ## Other
 
+- [Project film on YouTube](https://www.youtube.com/watch?v=F8X-mcABL8U) (1 minute, published 19 July 2025)
 - [YouTube channel](https://www.youtube.com/@Bayaweaver-p1e)
 - [Google Maps location](https://maps.app.goo.gl/iyfaohvVfE9AvDzk8)

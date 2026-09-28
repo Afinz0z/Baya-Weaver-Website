@@ -1490,17 +1490,13 @@ figcaption {
 
 .nearby {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  border-top: 1px solid var(--line-strong);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 2rem;
 }
 
 .nearby li {
-  padding: 1.25rem 1.25rem 0 0;
-}
-
-.nearby li+li {
-  padding-left: 1.25rem;
-  border-left: 1px solid var(--line);
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line-strong);
 }
 
 .nearby strong {
@@ -1972,6 +1968,64 @@ figcaption {
 
 .nearby a:hover strong {
   color: var(--accent-ink);
+}
+
+/* ---------- At a glance (grouped facts) ---------- */
+.glance {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+}
+
+.glance-summary {
+  font-size: 1.08rem;
+  color: var(--text);
+  max-width: 68ch;
+}
+
+.glance-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.glance-group h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.glance-group dl > div {
+  padding-block: 0.8rem;
+}
+
+.glance-group dl > div + div {
+  border-top: 1px solid var(--line);
+}
+
+.glance-group dt {
+  font-size: 0.82rem;
+  color: var(--faint);
+  margin-bottom: 0.15rem;
+}
+
+.glance-group dd {
+  color: var(--text);
+}
+
+.glance-group a {
+  color: var(--accent-ink);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .glance-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- FAQ (accordion) ---------- */

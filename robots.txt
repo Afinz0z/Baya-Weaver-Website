@@ -1,6 +1,27 @@
-# Note: while the site lives at a GitHub Pages sub-path, crawlers read
-# robots.txt from https://afinz0z.github.io/robots.txt, not this file.
-# It takes effect once the site moves to its own domain.
+# Baya Weaver Resorts
+# Search engines and AI assistants are welcome to read and cite this site.
+# Note: while the site lives at a GitHub Pages sub-path, crawlers read robots.txt from
+# https://afinz0z.github.io/robots.txt. This file takes effect once the site has its own domain.
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
 
