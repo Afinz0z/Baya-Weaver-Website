@@ -158,11 +158,18 @@
   if (reduceMotion || !hasIO) {
     reveals.forEach(el => el.classList.add('in'));
   } else {
+    // Read every position and scroller first, then write, so the page
+    // lays out once instead of once per block.
     const fold = window.innerHeight;
+    const tops = reveals.map(el => el.getBoundingClientRect().top);
+    const sideways = reveals.map(el => {
+      const o = el.parentElement ? getComputedStyle(el.parentElement).overflowX : 'visible';
+      return o === 'auto' || o === 'scroll';
+    });
     const pending = [];
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < fold) el.classList.add('in');
-      else pending.push(el);
+    reveals.forEach((el, i) => {
+      if (tops[i] < fold) el.classList.add('in');
+      else pending.push(i);
     });
     // Items inside a sideways scroller (the mobile "Nearby" row) sit
     // off-screen horizontally, so they reveal with their container.
@@ -175,10 +182,10 @@
         }
       });
     }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-    pending.forEach(el => {
+    pending.forEach(i => {
+      const el = reveals[i];
       const parent = el.parentElement;
-      const overflowX = parent ? getComputedStyle(parent).overflowX : 'visible';
-      if (overflowX === 'auto' || overflowX === 'scroll') {
+      if (sideways[i]) {
         if (!groups.has(parent)) { groups.set(parent, []); io.observe(parent); }
         groups.get(parent).push(el);
       } else {
@@ -301,7 +308,11 @@
   const lightbox = $('#lightbox');
   const lbLinks = $$('a.g-item[data-group]');
   if (lightbox && typeof lightbox.showModal === 'function' && lbLinks.length) {
-    const lbImg = $('#lightboxImg');
+    // The image element is created here so the markup never holds an <img> without a source
+    const lbImg = document.createElement('img');
+    lbImg.id = 'lightboxImg';
+    lbImg.alt = '';
+    $('#lightboxFigure').prepend(lbImg);
     const lbCap = $('#lightboxCap');
     const lbCount = $('#lightboxCount');
     let group = [];

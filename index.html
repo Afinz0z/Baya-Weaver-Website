@@ -396,7 +396,7 @@
           "name": "Where is the resort and how do I get there?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 80 km away (around 90 minutes by road). By road it is about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766."
+            "text": "Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 67 km away (around 1 hour 20 minutes to 1 hour 30 minutes by road). By road it is about 60 km from Kozhikode, 150 km from Mysore and 295 km from Bangalore via NH766."
           }
         },
         {
@@ -448,7 +448,7 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; frame-src https://www.youtube-nocookie.com https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <script src="js/theme.js?v=4"></script>
+  <script src="js/theme.js?v=5"></script>
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="images/icon-192.png" type="image/png" sizes="192x192">
@@ -456,7 +456,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=4">
+  <link rel="stylesheet" href="css/site.css?v=6">
 </head>
 
 <body>
@@ -464,7 +464,7 @@
 
   <!-- NAVBAR -->
   <header class="navbar" id="navbar">
-    <a href="#top" class="brand" aria-label="Baya Weaver Resorts, back to top">
+    <a href="#top" class="brand">
       <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1" />
         <ellipse cx="20" cy="22" rx="7" ry="5" fill="currentColor" opacity="0.8" />
@@ -486,6 +486,7 @@
       <a href="#progress">Progress</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
+      <a href="wayanad-guide.html">Guide</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -510,6 +511,7 @@
     <a href="#progress">Progress</a>
     <a href="#gallery">Gallery</a>
     <a href="#location">Location</a>
+    <a href="wayanad-guide.html">Guide</a>
     <a href="#contact">Contact</a>
     <a class="btn btn-primary" href="#newsletter-section">Register interest</a>
   </nav>
@@ -527,10 +529,13 @@
         </div>
       </div>
       <figure class="hero-media">
-        <img src="images/site/render-villa-facade.webp"
+        <picture>
+          <source media="(max-width: 900px)" srcset="images/site/render-villa-facade-m.webp" width="720" height="540">
+          <img src="images/site/render-villa-facade.webp"
           srcset="images/site/render-villa-facade-sm.webp 560w, images/site/render-villa-facade.webp 960w"
           sizes="(max-width: 900px) 92vw, 52vw" width="960" height="960" fetchpriority="high"
           alt="Architect render of a Baya Weaver villa with a floor-to-ceiling glass front and timber screens, set into a green hillside">
+        </picture>
         <figcaption>Villa exterior. Architect render, Sumayyasalih Architects.</figcaption>
       </figure>
     </section>
@@ -539,10 +544,13 @@
     <section class="section vision" id="about" aria-labelledby="about-title">
       <div class="wrap vision-grid">
         <figure class="vision-media reveal">
-          <img src="images/site/site-2026-03-22-valley-view.webp"
+          <picture>
+            <source media="(max-width: 900px)" srcset="images/site/site-2026-03-22-valley-view-m.webp" width="720" height="540">
+            <img src="images/site/site-2026-03-22-valley-view.webp"
             srcset="images/site/site-2026-03-22-valley-view-sm.webp 400w, images/site/site-2026-03-22-valley-view.webp 720w"
             sizes="(max-width: 900px) 92vw, 36vw" width="720" height="960" loading="lazy" decoding="async"
             alt="View from the estate across a green valley to the Wayanad hills under a blue sky">
+          </picture>
           <figcaption>The view from the estate. Site photo, <time datetime="2026-03-22">22 March 2026</time>.</figcaption>
         </figure>
         <div class="vision-copy">
@@ -595,7 +603,7 @@
         <div class="bento">
           <figure class="bento-img bento-img-a reveal">
             <img src="images/site/render-master-plan-aerial.webp"
-              srcset="images/site/render-master-plan-aerial-sm.webp 640w, images/site/render-master-plan-aerial.webp 1280w"
+              srcset="images/site/render-master-plan-aerial-sm.webp 640w, images/site/render-master-plan-aerial-md.webp 800w, images/site/render-master-plan-aerial.webp 1280w"
               sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Aerial master plan render showing villas spread along a winding road through tea terraces, with the clubhouse and open pool below">
             <figcaption>Master plan, aerial view. Architect render.</figcaption>
@@ -641,7 +649,7 @@
 
           <figure class="bento-img bento-img-b reveal">
             <img src="images/site/render-hillside-villas.webp"
-              srcset="images/site/render-hillside-villas-sm.webp 640w, images/site/render-hillside-villas.webp 1280w"
+              srcset="images/site/render-hillside-villas-sm.webp 640w, images/site/render-hillside-villas-md.webp 800w, images/site/render-hillside-villas.webp 1280w"
               sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="544" loading="lazy" decoding="async"
               alt="Render of villas stepping down a tea-covered hillside above the valley">
             <figcaption>Hillside villas. Architect render.</figcaption>
@@ -689,10 +697,13 @@
           </div>
 
           <figure class="progress-lead reveal">
-            <img src="images/site/site-2026-03-22-villa-plastered.webp"
+            <picture>
+              <source media="(max-width: 900px)" srcset="images/site/site-2026-03-22-villa-plastered-m.webp" width="720" height="540">
+              <img src="images/site/site-2026-03-22-villa-plastered.webp"
               srcset="images/site/site-2026-03-22-villa-plastered-sm.webp 400w, images/site/site-2026-03-22-villa-plastered.webp 720w"
               sizes="(max-width: 900px) 92vw, 40vw" width="720" height="960" loading="lazy" decoding="async"
               alt="Plastered villa shell with its roof on, building materials stacked in front, tea bushes and hills behind">
+            </picture>
             <figcaption>A plastered villa shell. Site photo, <time datetime="2026-03-22">22 March 2026</time>.</figcaption>
           </figure>
         </div>
@@ -800,29 +811,35 @@
 
         <div class="villa-grid">
           <figure class="villa villa-a reveal">
-            <img src="images/site/render-2bhk-pool-villa.webp"
+            <picture>
+              <source media="(max-width: 900px)" srcset="images/site/render-2bhk-pool-villa-m.webp" width="720" height="540">
+              <img src="images/site/render-2bhk-pool-villa.webp"
               srcset="images/site/render-2bhk-pool-villa-sm.webp 560w, images/site/render-2bhk-pool-villa.webp 960w"
               sizes="(max-width: 900px) 92vw, 55vw" width="960" height="958" loading="lazy" decoding="async"
               alt="Render of the 2BHK pool villa, a timber-framed glass pavilion on a raised terrace above a garden">
+            </picture>
             <figcaption><strong>2BHK Pool Villa</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-b reveal">
-            <img src="images/site/render-single-bed-villa.webp"
+            <picture>
+              <source media="(max-width: 900px)" srcset="images/site/render-single-bed-villa-m.webp" width="720" height="540">
+              <img src="images/site/render-single-bed-villa.webp"
               srcset="images/site/render-single-bed-villa-sm.webp 560w, images/site/render-single-bed-villa.webp 960w"
               sizes="(max-width: 900px) 92vw, 40vw" width="960" height="925" loading="lazy" decoding="async"
               alt="Render of the single bed villa, an angular cantilevered form with a glass front and balcony">
+            </picture>
             <figcaption><strong>Single Bed Villa</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-c reveal">
             <img src="images/site/render-open-pool-deck.webp"
-              srcset="images/site/render-open-pool-deck-sm.webp 640w, images/site/render-open-pool-deck.webp 1280w"
+              srcset="images/site/render-open-pool-deck-sm.webp 640w, images/site/render-open-pool-deck-md.webp 800w, images/site/render-open-pool-deck.webp 1280w"
               sizes="(max-width: 900px) 92vw, 40vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Render of the open pool with a timber deck beside a pitched-roof pavilion">
             <figcaption><strong>Open pool</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-d reveal">
             <img src="images/site/render-clubhouse-entrance.webp"
-              srcset="images/site/render-clubhouse-entrance-sm.webp 640w, images/site/render-clubhouse-entrance.webp 1280w"
+              srcset="images/site/render-clubhouse-entrance-sm.webp 640w, images/site/render-clubhouse-entrance-md.webp 800w, images/site/render-clubhouse-entrance.webp 1280w"
               sizes="(max-width: 900px) 92vw, 55vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Render of the clubhouse entrance with a folded roof, stone wall and landscaped driveway">
             <figcaption><strong>Grand clubhouse</strong><span>Entrance, dining and recreation. Architect render</span></figcaption>
@@ -881,7 +898,7 @@
           <time datetime="2025-07-19">19 July 2025</time>.</p>
         <div class="film-frame" id="youtubePlayer">
           <a class="film-poster" id="youtubeThumb" href="https://www.youtube.com/watch?v=F8X-mcABL8U" target="_blank"
-            rel="noopener" aria-label="Play video: Baya Weaver Resort, Vythiri, Wayanad, Kerala (opens YouTube)">
+            rel="noopener" aria-label="Plays from YouTube: the Baya Weaver Resort film, Vythiri, Wayanad">
             <img src="images/site/render-villa-cluster.webp" width="1280" height="557" loading="lazy" decoding="async" alt="">
             <span class="film-play" aria-hidden="true"><svg class="i"><use href="images/icons.svg#i-play"></use></svg></span>
             <span class="film-note">Plays from YouTube</span>
@@ -901,8 +918,8 @@
       <div class="wrap">
         <h2 class="section-title" id="location-title">Old Vythiri, <em>Wayanad</em></h2>
         <p class="body-copy">Baya Weaver Resorts is in Old Vythiri (also spelled Vaithiri), in the Wayanad district of
-          Kerala, on the National Highway corridor between Kozhikode and Kalpetta. The 3.27-acre site sits on Highland Tea Estate at about 800 m above sea level, around 80 km
-          (about 90 minutes by road) from Calicut International Airport.</p>
+          Kerala, on the National Highway corridor between Kozhikode and Kalpetta. The 3.27-acre site sits on Highland Tea Estate at about 800 m above sea level, about 67 km
+          (around 1 hour 20 minutes to 1 hour 30 minutes by road) from Calicut International Airport.</p>
 
         <div class="location-grid">
           <div class="reveal">
@@ -914,12 +931,12 @@
               </div>
               <div>
                 <dt><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-car"></use></svg>By road</dt>
-                <dd>About 70 km from Calicut (Kozhikode), 90 km from Mysore and 270 km from Bangalore via NH766.</dd>
+                <dd>About 60 km from Kozhikode (Calicut), 150 km from Mysore and 295 km from Bangalore via NH766.</dd>
               </div>
               <div>
                 <dt><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-airplane-tilt"></use></svg>Nearest
                   airport</dt>
-                <dd>Calicut International Airport (CCJ), about 80 km or 90 minutes by road.</dd>
+                <dd>Calicut International Airport (CCJ), about 67 km or 1 hour 20 minutes to 1 hour 30 minutes by road.</dd>
               </div>
               <div>
                 <dt><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-mountains"></use></svg>Elevation and
@@ -964,6 +981,7 @@
           <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ennooru+Tribal+Heritage+Village%2C+Wayanad" target="_blank" rel="noopener"><strong>Ennooru Tribal Heritage Village</strong><span>A place to learn about Adivasi culture and
               traditions.</span></a></li>
         </ul>
+        <a class="btn btn-ghost guide-link" href="wayanad-guide.html">Things to do within two hours <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-right"></use></svg></a>
       </div>
     </section>
 
@@ -980,7 +998,7 @@
               <div><dt>Location</dt><dd>Old Vythiri, Wayanad District, Kerala 673576, India</dd></div>
               <div><dt>Coordinates</dt><dd>11.5350° N, 76.0387° E</dd></div>
               <div><dt>Setting</dt><dd>3.27 acres of Highland Tea Estate, about 800 m above sea level</dd></div>
-              <div><dt>Nearest airport</dt><dd>Calicut International (CCJ), about 80 km</dd></div>
+              <div><dt>Nearest airport</dt><dd>Calicut International (CCJ), about 67 km</dd></div>
             </dl>
           </div>
           <div class="glance-group reveal">
@@ -1050,7 +1068,7 @@
           </details>
           <details class="faq-item reveal">
             <summary><span>Where is the resort and how do I get there?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
-            <p>Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 80 km away (around 90 minutes by road). By road it is about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766.</p>
+            <p>Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 67 km away (around 1 hour 20 minutes to 1 hour 30 minutes by road). By road it is about 60 km from Kozhikode, 150 km from Mysore and 295 km from Bangalore via NH766.</p>
           </details>
           <details class="faq-item reveal">
             <summary><span>Is Vythiri the same as Vaithiri?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
@@ -1219,6 +1237,7 @@
           <li><a href="#villas">The villas</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#location">Location</a></li>
+          <li><a href="wayanad-guide.html">Wayanad guide</a></li>
           <li><a href="#facts">At a glance</a></li>
           <li><a href="#faq">Questions</a></li>
         </ul>
@@ -1255,8 +1274,7 @@
 
   <!-- Gallery lightbox -->
   <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
-    <figure>
-      <img id="lightboxImg" src="" alt="">
+    <figure id="lightboxFigure">
       <figcaption><span id="lightboxCap"></span> <span class="lb-count" id="lightboxCount"></span></figcaption>
     </figure>
     <button class="icon-btn lb-close" type="button" data-lb="close" aria-label="Close">
@@ -1270,7 +1288,7 @@
     </button>
   </dialog>
 
-  <script src="js/main.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
 </body>
 
 </html>

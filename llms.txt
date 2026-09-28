@@ -12,7 +12,7 @@ Not to be confused with the baya weaver bird (Ploceus philippinus).
 - Villas: 14. Four have private plunge pools. Designs shown include the 2BHK Pool Villa and the Single Bed Villa.
 - Shared facilities: one open pool and a clubhouse for dining, gatherings and recreation.
 - Architect: Sumayyasalih Architects. Images marked "render" are proposed designs, not finished buildings.
-- Getting there: about 80 km (around 90 minutes) from Calicut International Airport (CCJ); about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766.
+- Getting there: about 67 km (around 1 hour 20 minutes to 1 hour 30 minutes) from Calicut International Airport (CCJ); about 60 km from Kozhikode, 150 km from Mysore and 295 km from Bangalore via NH766.
 - Contact: bayaweaverresort@gmail.com. Enquiries accepted for site visits, villa ownership, investment, trade, future stays and brochure requests.
 - The website does not take bookings or payments.
 
@@ -20,6 +20,7 @@ Not to be confused with the baya weaver bird (Ploceus philippinus).
 
 - [Home](https://afinz0z.github.io/Baya-Weaver-Website/): overview, construction progress, villas, gallery, location, key facts, questions and enquiry form.
 - [Full text for AI assistants](https://afinz0z.github.io/Baya-Weaver-Website/llms-full.txt): the site's content as plain Markdown.
+- [Things to do near Vythiri, Wayanad](https://afinz0z.github.io/Baya-Weaver-Website/wayanad-guide.html): 29 places within two hours' drive (viewpoints, waterfalls, treks, wildlife, heritage, the coast), Malabar food, sample days out, seasons and travel tips, with drive times from the resort.
 - [Privacy policy](https://afinz0z.github.io/Baya-Weaver-Website/privacy.html): what personal data the website collects and how it is used.
 - [Terms of use](https://afinz0z.github.io/Baya-Weaver-Website/terms.html): how to read renders, target dates and project information; no offer or advice.
 - [Accessibility statement](https://afinz0z.github.io/Baya-Weaver-Website/accessibility.html): accessibility measures and how to report a problem.

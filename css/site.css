@@ -164,6 +164,10 @@ img {
   height: auto;
 }
 
+picture {
+  display: block;
+}
+
 a {
   color: inherit;
 }
@@ -533,8 +537,8 @@ textarea {
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 60%;
+  inset: 0 auto 0 calc((100% - 100vw) / 2);
+  width: calc(60% + (100vw - 100%) / 2);
   z-index: -1;
   background: radial-gradient(ellipse at 10% 40%, var(--tint) 0%, transparent 65%);
   opacity: 0.9;
@@ -2385,6 +2389,183 @@ figcaption {
   }
 }
 
+/* ---------- Wayanad guide ---------- */
+.guide-head-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.guide-lede {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  color: var(--muted);
+  max-width: 52ch;
+  margin-bottom: 1rem;
+}
+
+.guide-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.guide-body {
+  max-width: none;
+}
+
+.guide-body > p,
+.guide-body > ul,
+.guide-body > .callout {
+  max-width: 70ch;
+}
+
+.places {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.prose .place h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.place-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.chip .i {
+  width: 15px;
+  height: 15px;
+  color: var(--accent-ink);
+}
+
+.prose .place p {
+  margin: 0;
+}
+
+.prose .place .place-note {
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 0.9rem;
+}
+
+.prose .place-map {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 32px;
+  font-size: 0.9rem;
+  color: var(--accent-ink);
+}
+
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  margin-top: 1.25rem;
+}
+
+.food-list > div {
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.food-list dt {
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.food-list dd {
+  color: var(--muted);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.plan {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--tint), var(--surface) 70%);
+}
+
+.prose .plan h3 {
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.plan ol {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.plan ol li {
+  color: var(--text);
+}
+
+.plan > p {
+  font-size: 0.9rem;
+}
+
+.guide-link {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .guide-head-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .places,
+  .food-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- 404 ---------- */
 .not-found {
   min-height: 100dvh;
@@ -2505,6 +2686,94 @@ figcaption {
 
   .legal {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Short landscape screens (phones on their side) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --nav-h: 60px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 1.25rem);
+    padding-bottom: 1.5rem;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 7vh + 1rem, 3.4rem);
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-sub {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-media {
+    justify-self: end;
+    max-width: calc(100dvh - var(--nav-h) - 2rem);
+  }
+
+  .hero-media img {
+    aspect-ratio: 1;
+  }
+
+  .hero-media figcaption {
+    display: none;
+  }
+
+  .hero-actions .btn {
+    flex: 0 0 auto;
+  }
+
+  .action-bar {
+    padding-block: 0.4rem calc(0.4rem + env(safe-area-inset-bottom));
+  }
+
+  .action-bar .btn {
+    min-height: 40px;
+  }
+
+  .mobile-menu {
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .mobile-menu a:not(.btn) {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------- Large monitors: scale up so pages don't look tiny ---------- */
+@media (min-width: 1800px) {
+  html {
+    font-size: 18px;
+  }
+
+  :root {
+    --wrap: 1440px;
+  }
+
+  .hero {
+    max-width: 1720px;
+  }
+}
+
+@media (min-width: 2400px) {
+  html {
+    font-size: 20px;
+  }
+
+  :root {
+    --wrap: 1600px;
+    --nav-h: 80px;
+  }
+
+  .hero {
+    max-width: 1960px;
   }
 }
 
