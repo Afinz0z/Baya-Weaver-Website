@@ -61,8 +61,8 @@
   --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
   --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --gold: #c9a84c;
-  --gold-bright: #dcbd62;
+  --gold: #e7ba44;
+  --gold-bright: #f2cd6a;
   --radius: 10px;
   --radius-lg: 16px;
   --nav-h: 72px;
@@ -399,26 +399,33 @@ textarea {
 }
 
 .brand-mark {
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: auto;
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  gap: 0.2rem;
+  line-height: 1;
 }
 
+/* Echoes the logo: spaced capitals, RESORTS set wide beneath */
 .brand-name {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--accent-ink);
 }
 
 .brand-sub {
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.52em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
@@ -1540,7 +1547,7 @@ figcaption {
 .register {
   background:
     radial-gradient(ellipse at 20% 0%, var(--tint), transparent 60%),
-    radial-gradient(ellipse at 90% 100%, rgba(201, 168, 76, 0.12), transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(231, 186, 68, 0.12), transparent 55%),
     var(--bg-alt);
   border-block: 1px solid var(--line);
   text-align: center;
@@ -1778,7 +1785,17 @@ figcaption {
   padding-bottom: 3rem;
 }
 
-.footer-brand p:not(.brand-name) {
+.footer-logo img {
+  width: 190px;
+  height: auto;
+}
+
+[data-theme="dark"] .logo-on-light,
+[data-theme="light"] .logo-on-dark {
+  display: none;
+}
+
+.footer-brand p:not(.footer-logo) {
   color: var(--muted);
   max-width: 44ch;
   margin-top: 0.75rem;
