@@ -1854,7 +1854,7 @@ figcaption {
    2. Photographs wipe in as their section arrives
    3. Grid items enter in a short stagger (reading order)
    4. Key stats count up (main.js; draws the eye to the facts)
-   5. Hero image drifts slightly as it scrolls away (depth)
+   5. (removed: the hero image drift slid the photo into its caption)
    6. Micro-feedback: arrow nudge, lightbox open
    Every effect is off under prefers-reduced-motion. */
 @media (prefers-reduced-motion: no-preference) {
@@ -1877,16 +1877,16 @@ figcaption {
 
   .js figure.reveal img,
   .js .mosaic li.reveal img {
-    transition: clip-path 1.2s var(--ease), translate 1.2s var(--ease), scale 1.4s var(--ease),
+    transition: clip-path 1.2s var(--ease), opacity 0.9s var(--ease),
       transform 0.6s var(--ease), box-shadow 0.6s var(--ease), filter 0.6s var(--ease);
     transition-delay: calc(var(--i, 0) * 90ms);
   }
 
+  /* The frame stays put; only the clip opens, so an image never slides into its caption */
   .js figure.reveal:not(.in) img,
   .js .mosaic li.reveal:not(.in) img {
     clip-path: inset(30% 0 0 0 round var(--clip-r, var(--radius-lg)));
-    translate: 0 28px;
-    scale: 1.05;
+    opacity: 0.2;
   }
 
   .js figure.reveal.in img,
@@ -1897,15 +1897,6 @@ figcaption {
   /* 3 */
   .js .reveal {
     transition-delay: calc(var(--i, 0) * 90ms);
-  }
-
-  /* 5 */
-  @supports (animation-timeline: view()) {
-    .hero-media img {
-      animation: unveil 1.5s var(--ease) 0.2s both, drift linear both;
-      animation-timeline: auto, view();
-      animation-range: normal, exit 0% exit 100%;
-    }
   }
 
   /* 6 */
@@ -1949,11 +1940,6 @@ figcaption {
   }
 }
 
-@keyframes drift {
-  to {
-    translate: 0 8%;
-  }
-}
 
 @keyframes lb-in {
   from {
@@ -3174,8 +3160,8 @@ html:not(.js) .villa figcaption::before {
 }
 
 @keyframes crop-drift {
-  from { object-position: 50% 35%; }
-  to { object-position: 50% 65%; }
+  from { object-position: 50% 42%; }
+  to { object-position: 50% 58%; }
 }
 
 @keyframes draw {
