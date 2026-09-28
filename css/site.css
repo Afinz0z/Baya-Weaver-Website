@@ -2794,6 +2794,423 @@ figcaption {
   }
 }
 
+/* ============================================================
+   Animation set 2, ordered by impact. Each one does a job:
+    1 scroll progress bar ........ where am I on the page
+    2 headline mask reveal ....... marks each new section
+    3 theme circular reveal ...... makes the light/dark switch feel physical (main.js)
+    4 logo shards assemble ....... brand moment on arrival
+    5 hero lines stagger ......... reading order of the headline
+    6 photo parallax ............. depth while scrolling
+    7 FAQ smooth expand .......... shows the open/close state change
+    8 nav indicator slides ....... which section you are in
+    9 guide contents marker ...... where you are in the guide
+   10 success check draws ........ confirms a sent form
+   11 invalid field shake ........ points at what needs fixing
+   12 lightbox direction slide ... direction of travel (main.js)
+   13 back-to-top ring ........... progress, next to the exit
+   14 card spotlight ............. hover feedback on cards
+   15 mobile menu cascade ........ guides the eye down the menu
+   16 image loading shimmer ...... loading state for lazy images
+   17 filmstrip drag momentum .... direct manipulation (main.js)
+   18 caption rule draws ......... ties each villa name to its image
+   19 play button pulse .......... invites the video click
+   20 map pin drop ............... draws the eye to the location
+   All motion is off under prefers-reduced-motion; the progress bar
+   and ring still show position, without animating.
+   ============================================================ */
+
+/* 1. Scroll progress bar (CSS scroll timeline; main.js covers older browsers) */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 70;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress, 0));
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: progress-grow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes progress-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* 13. Back-to-top progress ring */
+.to-top-ring {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  rotate: -90deg;
+  pointer-events: none;
+}
+
+.to-top-ring circle {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--progress, 0) * 100);
+}
+
+@supports (animation-timeline: scroll()) {
+  .to-top-ring circle {
+    animation: ring-fill linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes ring-fill {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* 8. Sliding nav indicator (positioned by main.js) */
+.nav-links {
+  position: relative;
+}
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 2px;
+  background: var(--gold);
+  transform-origin: 0 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-links.has-indicator a[aria-current] {
+  background-size: 0 1px;
+}
+
+.nav-links.has-indicator a[aria-current]:hover {
+  background-size: 100% 1px;
+}
+
+/* 9. Guide contents marker */
+.toc ol {
+  position: relative;
+}
+
+.toc a[aria-current] {
+  color: var(--accent-ink);
+}
+
+.toc-marker {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 2px;
+  height: 1px;
+  background: var(--gold);
+  transform-origin: 50% 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 14. Card spotlight (position set by main.js) */
+.feature,
+.place,
+.plan {
+  position: relative;
+  isolation: isolate;
+}
+
+.feature::before,
+.place::before,
+.plan::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(231, 186, 68, 0.13), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .feature:hover::before,
+  .place:hover::before,
+  .plan:hover::before {
+    opacity: 1;
+  }
+}
+
+/* 10. Success checkmark */
+.check-draw {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.35rem;
+  vertical-align: -0.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 16. Loading shimmer for lazy images (removed by main.js on load) */
+img.is-loading {
+  background: linear-gradient(100deg, var(--surface) 30%, var(--surface-2) 50%, var(--surface) 70%) 0 0 / 250% 100%;
+}
+
+/* 17. Filmstrip drag cursor */
+@media (hover: hover) and (pointer: fine) {
+  .filmstrip {
+    cursor: grab;
+  }
+
+  .filmstrip.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+  .filmstrip.is-dragging a {
+    pointer-events: none;
+  }
+}
+
+/* 18. Villa caption rule */
+.villa figcaption {
+  position: relative;
+}
+
+.villa figcaption::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--gold);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+.villa.in figcaption::before,
+html:not(.js) .villa figcaption::before {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* 2. Section headlines rise out of a mask */
+  .js .section-title.reveal:not(.in) {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 100% 0);
+    translate: 0 0.45em;
+  }
+
+  .js .section-title.reveal {
+    transition: clip-path 0.95s var(--ease), translate 0.95s var(--ease);
+  }
+
+  .js .section-title.reveal.in {
+    clip-path: inset(-0.3em -0.3em -0.35em -0.3em);
+  }
+
+  /* 4. Logo shards assemble */
+  .navbar .brand-mark path {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: shard-in 0.9s var(--ease) both;
+  }
+
+  .navbar .brand-mark path:nth-child(1) { --dx: -14px; --dy: -10px; --r: -24deg; animation-delay: 0.05s; }
+  .navbar .brand-mark path:nth-child(2) { --dx: 12px; --dy: -12px; --r: 18deg; animation-delay: 0.1s; }
+  .navbar .brand-mark path:nth-child(3) { --dx: -10px; --dy: 12px; --r: 30deg; animation-delay: 0.15s; }
+  .navbar .brand-mark path:nth-child(4) { --dx: 14px; --dy: 8px; --r: -20deg; animation-delay: 0.2s; }
+  .navbar .brand-mark path:nth-child(5) { --dx: -12px; --dy: -6px; --r: 16deg; animation-delay: 0.25s; }
+  .navbar .brand-mark path:nth-child(6) { --dx: 10px; --dy: 14px; --r: -28deg; animation-delay: 0.3s; }
+  .navbar .brand-mark path:nth-child(7) { --dx: -16px; --dy: 4px; --r: 22deg; animation-delay: 0.35s; }
+  .navbar .brand-mark path:nth-child(8) { --dx: 16px; --dy: -4px; --r: -14deg; animation-delay: 0.4s; }
+  .navbar .brand-mark path:nth-child(9) { --dx: -6px; --dy: 16px; --r: 26deg; animation-delay: 0.45s; }
+  .navbar .brand-mark path:nth-child(10) { --dx: 8px; --dy: -16px; --r: -18deg; animation-delay: 0.5s; }
+
+  /* 5. Hero headline, one line at a time */
+  .hero-copy > .hero-title {
+    animation: none;
+  }
+
+  .hero-title .line {
+    display: inline-block;
+    padding-bottom: 0.08em;
+    animation: line-rise 1.05s var(--ease) both;
+  }
+
+  .hero-title .line:nth-of-type(1) { animation-delay: 0.1s; }
+  .hero-title .line:nth-of-type(2) { animation-delay: 0.26s; }
+
+  /* 6. Photo parallax: the crop drifts as the image crosses the screen */
+  @supports (animation-timeline: view()) {
+    .vision-media img,
+    .progress-lead img,
+    .bento-img img,
+    .villa-c img,
+    .villa-d img,
+    .guide-hero img {
+      animation: crop-drift linear both;
+      animation-timeline: view();
+    }
+  }
+
+  /* 7. FAQ answers open smoothly */
+  @supports selector(::details-content) {
+    .faq-list {
+      interpolate-size: allow-keywords;
+    }
+
+    .faq-item::details-content {
+      height: 0;
+      overflow: clip;
+      opacity: 0;
+      transition: height 0.45s var(--ease), opacity 0.35s var(--ease), content-visibility 0.45s allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      height: auto;
+      opacity: 1;
+    }
+  }
+
+  /* 8, 9. Indicators glide */
+  .nav-indicator,
+  .toc-marker {
+    transition: transform 0.55s var(--ease), opacity 0.3s var(--ease);
+  }
+
+  /* 10. Checkmark draws itself */
+  .check-draw path {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: draw 0.6s 0.1s var(--ease) forwards;
+  }
+
+  /* 11. Invalid field shake */
+  .shake {
+    animation: shake 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+
+  /* 15. Mobile menu cascade */
+  .mobile-menu.open > * {
+    animation: rise 0.55s var(--ease) both;
+  }
+
+  .mobile-menu.open > :nth-child(1) { animation-delay: 0.04s; }
+  .mobile-menu.open > :nth-child(2) { animation-delay: 0.08s; }
+  .mobile-menu.open > :nth-child(3) { animation-delay: 0.12s; }
+  .mobile-menu.open > :nth-child(4) { animation-delay: 0.16s; }
+  .mobile-menu.open > :nth-child(5) { animation-delay: 0.2s; }
+  .mobile-menu.open > :nth-child(6) { animation-delay: 0.24s; }
+  .mobile-menu.open > :nth-child(7) { animation-delay: 0.28s; }
+  .mobile-menu.open > :nth-child(8) { animation-delay: 0.32s; }
+
+  /* 16. Shimmer moves while an image loads */
+  img.is-loading {
+    animation: shimmer 1.4s linear infinite;
+  }
+
+  /* 18. Caption rule draws */
+  .villa figcaption::before {
+    transition: transform 1s 0.35s var(--ease);
+  }
+
+  /* 19. Play button pulse, twice, when the film arrives */
+  .film-play::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .film.is-seen .film-play::after {
+    animation: pulse-ring 1.6s 0.4s var(--ease) 2;
+  }
+
+  /* 20. Map pin drops in */
+  .map-frame.in .map-pin {
+    animation: pin-drop 0.9s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+}
+
+@keyframes shard-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--r, 0));
+  }
+}
+
+@keyframes line-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(-0.3em -0.3em -0.3em -0.3em);
+  }
+}
+
+@keyframes crop-drift {
+  from { object-position: 50% 35%; }
+  to { object-position: 50% 65%; }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(3px); }
+  30%, 50%, 70% { transform: translateX(-5px); }
+  40%, 60% { transform: translateX(5px); }
+}
+
+@keyframes shimmer {
+  to { background-position: -250% 0; }
+}
+
+@keyframes pulse-ring {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.7); }
+}
+
+@keyframes pin-drop {
+  0% { opacity: 0; transform: translateY(-28px); }
+  60% { opacity: 1; }
+  100% { transform: none; }
+}
+
+/* 3. Theme switch: the new theme's snapshot is revealed by main.js */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 /* ---------- Reduced motion: everything settles instantly ---------- */
 @media (prefers-reduced-motion: reduce) {
 
@@ -2803,5 +3220,14 @@ figcaption {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @supports (animation-timeline: scroll()) {
+    .scroll-progress,
+    .to-top-ring circle {
+      animation-duration: auto !important;
+    }
   }
 }

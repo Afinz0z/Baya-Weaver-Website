@@ -15,6 +15,7 @@
   const hasIO = 'IntersectionObserver' in window;
   const CONTACT_EMAIL = 'bayaweaverresort@gmail.com';
   const REQUEST_TIMEOUT_MS = 15000;
+  const CHECK = '<svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>';
 
   // ------------------------------------------------------------
   // Theme toggle (initial theme is set by js/theme.js in <head>)
@@ -32,9 +33,20 @@
     labelThemeToggle();
     themeToggle.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('bw-theme', next); } catch (e) { /* storage unavailable */ }
-      labelThemeToggle();
+      const apply = () => {
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('bw-theme', next); } catch (e) { /* storage unavailable */ }
+        labelThemeToggle();
+      };
+      if (!document.startViewTransition || reduceMotion) { apply(); return; }
+      // The new theme spreads out in a circle from the button
+      const r = themeToggle.getBoundingClientRect();
+      const x = r.left + r.width / 2, y = r.top + r.height / 2;
+      const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      document.startViewTransition(apply).ready.then(() => {
+        root.animate({ clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration: 650, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', pseudoElement: '::view-transition-new(root)' });
+      }).catch(() => {});
     });
   }
 
@@ -52,6 +64,24 @@
     }).observe(sentinel);
   } else if (navbar) {
     navbar.classList.add('scrolled');
+  }
+
+  // ------------------------------------------------------------
+  // Scroll progress (bar + back-to-top ring). Modern browsers drive it
+  // from CSS scroll timelines; this fallback only runs where they are
+  // missing, and does one style write per animation frame.
+  // ------------------------------------------------------------
+  if (!(window.CSS && CSS.supports('animation-timeline: scroll()'))) {
+    let queued = false;
+    const paint = () => {
+      queued = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      root.style.setProperty('--progress', max > 0 ? Math.min(scrollY / max, 1).toFixed(4) : 0);
+    };
+    const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(paint); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+    paint();
   }
 
   // ------------------------------------------------------------
@@ -87,6 +117,28 @@
   }
 
   // ------------------------------------------------------------
+  // Sliding indicator under the current nav item
+  // ------------------------------------------------------------
+  const navList = $('.nav-links');
+  let placeIndicator = () => {};
+  if (navList) {
+    const bar = document.createElement('span');
+    bar.className = 'nav-indicator';
+    bar.setAttribute('aria-hidden', 'true');
+    navList.append(bar);
+    navList.classList.add('has-indicator');
+    placeIndicator = () => {
+      const cur = $('a[aria-current]', navList);
+      if (!cur || !cur.offsetWidth) { bar.style.opacity = '0'; return; }
+      bar.style.opacity = '1';
+      bar.style.transform = `translateX(${cur.offsetLeft}px) scaleX(${cur.offsetWidth})`;
+    };
+    placeIndicator();
+    if ('ResizeObserver' in window) new ResizeObserver(() => placeIndicator()).observe(navList);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeIndicator);
+  }
+
+  // ------------------------------------------------------------
   // Active section in the nav (aria-current), tracked by observer
   // ------------------------------------------------------------
   const navLinks = $$('.nav-links a[href^="#"], .mobile-menu a[href^="#"]');
@@ -103,9 +155,34 @@
         if (!entry.isIntersecting) return;
         navLinks.forEach(a => a.removeAttribute('aria-current'));
         (byId.get(entry.target.id) || []).forEach(a => a.setAttribute('aria-current', 'true'));
+        placeIndicator();
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(s => spy.observe(s));
+  }
+
+  // ------------------------------------------------------------
+  // "On this page" contents: highlight the section being read
+  // ------------------------------------------------------------
+  const tocList = $('.toc ol');
+  if (tocList && hasIO) {
+    const links = $$('a[href^="#"]', tocList);
+    const heads = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const marker = document.createElement('span');
+    marker.className = 'toc-marker';
+    marker.setAttribute('aria-hidden', 'true');
+    tocList.append(marker);
+    const mark = id => {
+      links.forEach(a => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + id));
+      const cur = $('a[aria-current]', tocList);
+      if (!cur) return;
+      marker.style.opacity = '1';
+      marker.style.transform = `translateY(${cur.offsetTop}px) scaleY(${cur.offsetHeight})`;
+    };
+    const tocSpy = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+    heads.forEach(h => tocSpy.observe(h));
   }
 
   // ------------------------------------------------------------
@@ -114,7 +191,7 @@
   // ------------------------------------------------------------
   const actionBar = $('#actionBar');
   const toTop = $('#toTop');
-  const hero = $('.hero');
+  const hero = $('.hero') || $('.page-head');
   if ((actionBar || toTop) && hero && hasIO) {
     let pastHero = false;
     const visibleForms = new Set();
@@ -154,6 +231,7 @@
     });
   });
 
+  $$('.section-title').forEach(el => el.classList.add('reveal'));
   const reveals = $$('.reveal');
   if (reduceMotion || !hasIO) {
     reveals.forEach(el => el.classList.add('in'));
@@ -321,8 +399,12 @@
 
     const preload = link => { if (link) { const img = new Image(); img.src = link.getAttribute('href'); } };
 
-    function show(i) {
+    function show(i, dir = 0) {
       index = (i + group.length) % group.length;
+      if (dir && !reduceMotion && lbImg.animate) {
+        lbImg.animate([{ opacity: 0, transform: `translateX(${dir * 40}px)` }, { opacity: 1, transform: 'none' }],
+          { duration: 380, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+      }
       const link = group[index];
       const thumb = $('img', link);
       lbImg.src = link.getAttribute('href');
@@ -348,16 +430,16 @@
       if (action) {
         const a = action.getAttribute('data-lb');
         if (a === 'close') lightbox.close();
-        if (a === 'prev') show(index - 1);
-        if (a === 'next') show(index + 1);
+        if (a === 'prev') show(index - 1, -1);
+        if (a === 'next') show(index + 1, 1);
       } else if (e.target === lightbox) {
         lightbox.close();
       }
     });
 
     lightbox.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') show(index - 1);
-      if (e.key === 'ArrowRight') show(index + 1);
+      if (e.key === 'ArrowLeft') show(index - 1, -1);
+      if (e.key === 'ArrowRight') show(index + 1, 1);
     });
 
     // Swipe left or right on touch screens
@@ -367,7 +449,7 @@
       if (startX === null) return;
       const dx = e.clientX - startX;
       startX = null;
-      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
     });
 
     lightbox.addEventListener('close', () => {
@@ -526,6 +608,12 @@
 
       const firstInvalid = markInvalid(form);
       if (firstInvalid) {
+        $$('[aria-invalid="true"]', form).forEach(field => {
+          field.classList.remove('shake');
+          void field.offsetWidth;          // restart the animation on repeat attempts
+          field.classList.add('shake');
+          field.addEventListener('animationend', () => field.classList.remove('shake'), { once: true });
+        });
         setStatus(statusEl, 'error', 'Please complete the highlighted fields.');
         firstInvalid.focus();
         return;
@@ -547,7 +635,7 @@
           signal: controller ? controller.signal : undefined
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        setStatus(statusEl, 'ok', successHtml);
+        setStatus(statusEl, 'ok', CHECK + successHtml);
         onSuccess && onSuccess();
         if (statusEl) { statusEl.setAttribute('tabindex', '-1'); statusEl.focus(); }
       } catch (err) {
@@ -576,4 +664,78 @@
     successHtml: "Thank you. We'll respond within 24 hours.",
     onSuccess: () => { contactForm.reset(); clearDraft(); syncEnquiryType(); }
   });
+  // ------------------------------------------------------------
+  // 14. Card spotlight follows the pointer (fine pointers only)
+  // ------------------------------------------------------------
+  if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    $$('.feature, .place, .plan').forEach(card => {
+      let frame = 0;
+      card.addEventListener('pointermove', e => {
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+          card.style.setProperty('--my', `${e.clientY - r.top}px`);
+        });
+      });
+    });
+  }
+
+  // ------------------------------------------------------------
+  // 16. Shimmer while lazy images load
+  // ------------------------------------------------------------
+  $$('img[loading="lazy"]').forEach(img => {
+    if (img.complete && img.naturalWidth) return;
+    img.classList.add('is-loading');
+    const done = () => img.classList.remove('is-loading');
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+  });
+
+  // ------------------------------------------------------------
+  // 17. Filmstrip: drag with the mouse, with a little momentum
+  // ------------------------------------------------------------
+  if (strip && window.matchMedia('(pointer: fine)').matches) {
+    let down = false, moved = false, startX = 0, startLeft = 0, lastX = 0, lastT = 0, velocity = 0;
+    strip.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      down = true; moved = false;
+      startX = lastX = e.clientX; startLeft = strip.scrollLeft; lastT = performance.now(); velocity = 0;
+    });
+    addEventListener('pointermove', e => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 5) { moved = true; strip.classList.add('is-dragging'); }
+      if (!moved) return;
+      const now = performance.now();
+      velocity = (e.clientX - lastX) / Math.max(now - lastT, 1);
+      lastX = e.clientX; lastT = now;
+      strip.scrollLeft = startLeft - dx;
+    });
+    addEventListener('pointerup', () => {
+      if (!down) return;
+      down = false;
+      if (!moved) return;
+      // links stay inert (CSS .is-dragging) until the glide ends, so the drag never opens a photo
+      let v = -velocity * 16;
+      const glide = () => {
+        if (reduceMotion || Math.abs(v) < 0.5) { strip.classList.remove('is-dragging'); return; }
+        strip.scrollLeft += v; v *= 0.93;
+        requestAnimationFrame(glide);
+      };
+      requestAnimationFrame(glide);
+    });
+  }
+
+  // ------------------------------------------------------------
+  // 19. Pulse the play button when the film section arrives
+  // ------------------------------------------------------------
+  const film = $('.film');
+  if (film && hasIO) {
+    const seen = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { film.classList.add('is-seen'); seen.disconnect(); }
+    }, { threshold: 0.5 });
+    seen.observe(film);
+  }
 })();
