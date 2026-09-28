@@ -36,54 +36,183 @@
   <meta name="ICBM" content="11.535045, 76.038681">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Resort",
-    "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#resort",
-    "name": "Baya Weaver Resorts",
-    "url": "https://afinz0z.github.io/Baya-Weaver-Website/",
-    "image": "https://afinz0z.github.io/Baya-Weaver-Website/images/site/og-baya-weaver.jpg",
-    "description": "Pre-opening resort of 14 villas, four with private pools, plus an open pool and clubhouse on 3.27 acres of Highland Tea Estate in Old Vythiri, Wayanad, Kerala. Under construction; target opening Q4 2026.",
-    "email": "bayaweaverresort@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vythiri",
-      "addressRegion": "Kerala",
-      "postalCode": "673576",
-      "addressCountry": "IN"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#org",
+      "name": "Baya Weaver Resorts",
+      "url": "https://afinz0z.github.io/Baya-Weaver-Website/",
+      "logo": "https://afinz0z.github.io/Baya-Weaver-Website/images/icon-512.png",
+      "email": "bayaweaverresort@gmail.com",
+      "sameAs": [
+        "https://www.youtube.com/@Bayaweaver-p1e"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Enquiries",
+        "email": "bayaweaverresort@gmail.com",
+        "availableLanguage": [
+          "en"
+        ]
+      }
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 11.535045,
-      "longitude": 76.038681
+    {
+      "@type": "WebSite",
+      "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#website",
+      "url": "https://afinz0z.github.io/Baya-Weaver-Website/",
+      "name": "Baya Weaver Resorts",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#org"
+      }
     },
-    "hasMap": "https://maps.app.goo.gl/iyfaohvVfE9AvDzk8",
-    "sameAs": ["https://www.youtube.com/@Bayaweaver-p1e"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Enquiries",
-      "email": "bayaweaverresort@gmail.com"
+    {
+      "@type": "Resort",
+      "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#resort",
+      "name": "Baya Weaver Resorts",
+      "url": "https://afinz0z.github.io/Baya-Weaver-Website/",
+      "image": "https://afinz0z.github.io/Baya-Weaver-Website/images/site/og-baya-weaver.jpg",
+      "description": "Pre-opening resort of 14 villas, four with private pools, plus an open pool and clubhouse on 3.27 acres of Highland Tea Estate in Old Vythiri, Wayanad, Kerala. Under construction; target opening Q4 2026.",
+      "email": "bayaweaverresort@gmail.com",
+      "parentOrganization": {
+        "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vythiri",
+        "addressRegion": "Kerala",
+        "postalCode": "673576",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.535045,
+        "longitude": 76.038681
+      },
+      "hasMap": "https://maps.app.goo.gl/iyfaohvVfE9AvDzk8",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Private plunge pools (4 villas)",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Open pool",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Clubhouse",
+          "value": true
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#webpage",
+      "url": "https://afinz0z.github.io/Baya-Weaver-Website/",
+      "name": "Baya Weaver Resorts | Villas in Old Vythiri, Wayanad, Kerala",
+      "isPartOf": {
+        "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#website"
+      },
+      "about": {
+        "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#resort"
+      },
+      "inLanguage": "en-IN",
+      "dateModified": "2026-09-28"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#faq",
+      "isPartOf": {
+        "@id": "https://afinz0z.github.io/Baya-Weaver-Website/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Baya Weaver Resorts open yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. The resort is under construction in Old Vythiri, Wayanad, with a target opening of Q4 2026. The latest site update on this page is dated 22 March 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book a stay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bookings are not open yet. Register your interest to hear first when they open, or send a future-stay enquiry through the form."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I visit the site before it opens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Choose “Book a site visit” in the enquiry form and add your preferred dates, and the team will get back to you to arrange it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many villas are there, and which have private pools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are 14 villas on 3.27 acres. Four villas have their own private plunge pools, and one open pool serves the wider resort. The designs shown include the 2BHK Pool Villa and the Single Bed Villa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the resort and how do I get there?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 80 km away (around 90 minutes by road). By road it is about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who designed the resort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sumayyasalih Architects. Images marked “render” on this site are their architectural renders of proposed designs, not photographs of finished buildings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I own or invest in a villa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The team welcomes enquiries about villa ownership and investment and shares details directly. Nothing on this website is an offer. Choose “Villa ownership” or “Investment opportunity” in the form, or request the brochure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get construction updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Register your email in the “Be the first to know” section to receive monthly construction updates. You can unsubscribe at any time."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 
-  <!-- Apply the saved or system theme before first paint (no flash) -->
-  <script>
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem('bw-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') {
-        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      }
-      document.documentElement.setAttribute('data-theme', t);
-      document.documentElement.classList.add('js');
-    })();
-  </script>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; frame-src https://www.youtube-nocookie.com https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script src="js/theme.js?v=4"></script>
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=3">
+  <link rel="stylesheet" href="css/site.css?v=4">
 </head>
 
 <body>
@@ -168,7 +297,7 @@
         <figure class="vision-media reveal">
           <img src="images/site/site-2026-03-22-valley-view.webp"
             srcset="images/site/site-2026-03-22-valley-view-sm.webp 400w, images/site/site-2026-03-22-valley-view.webp 720w"
-            sizes="(max-width: 900px) 92vw, 36vw" width="720" height="960" loading="lazy"
+            sizes="(max-width: 900px) 92vw, 36vw" width="720" height="960" loading="lazy" decoding="async"
             alt="View from the estate across a green valley to the Wayanad hills under a blue sky">
           <figcaption>The view from the estate. Site photo, 22 March 2026.</figcaption>
         </figure>
@@ -223,7 +352,7 @@
           <figure class="bento-img bento-img-a reveal">
             <img src="images/site/render-master-plan-aerial.webp"
               srcset="images/site/render-master-plan-aerial-sm.webp 640w, images/site/render-master-plan-aerial.webp 1280w"
-              sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="555" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Aerial master plan render showing villas spread along a winding road through tea terraces, with the clubhouse and open pool below">
             <figcaption>Master plan, aerial view. Architect render.</figcaption>
           </figure>
@@ -269,7 +398,7 @@
           <figure class="bento-img bento-img-b reveal">
             <img src="images/site/render-hillside-villas.webp"
               srcset="images/site/render-hillside-villas-sm.webp 640w, images/site/render-hillside-villas.webp 1280w"
-              sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="544" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="544" loading="lazy" decoding="async"
               alt="Render of villas stepping down a tea-covered hillside above the valley">
             <figcaption>Hillside villas. Architect render.</figcaption>
           </figure>
@@ -318,7 +447,7 @@
           <figure class="progress-lead reveal">
             <img src="images/site/site-2026-03-22-villa-plastered.webp"
               srcset="images/site/site-2026-03-22-villa-plastered-sm.webp 400w, images/site/site-2026-03-22-villa-plastered.webp 720w"
-              sizes="(max-width: 900px) 92vw, 40vw" width="720" height="960" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 40vw" width="720" height="960" loading="lazy" decoding="async"
               alt="Plastered villa shell with its roof on, building materials stacked in front, tea bushes and hills behind">
             <figcaption>A plastered villa shell. Site photo, 22 March 2026.</figcaption>
           </figure>
@@ -337,46 +466,46 @@
         </div>
         <ul class="filmstrip" id="siteStrip" aria-label="Construction photos, 22 March 2026" tabindex="0">
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-villa-roofed-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-villa-roofed.webp">
+              <img src="images/site/site-2026-03-22-villa-roofed-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Villa with a finished roof among trees on the tea slope, seen from above">
-              <figcaption>Villa cluster A</figcaption>
-            </figure>
+              <span class="g-cap">Villa cluster A</span>
+            </a>
           </li>
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-villa-frame-columns-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-villa-frame-columns.webp">
+              <img src="images/site/site-2026-03-22-villa-frame-columns-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Two-storey villa frame with concrete columns and brick infill on freshly cut red earth">
-              <figcaption>Cluster B structure</figcaption>
-            </figure>
+              <span class="g-cap">Cluster B structure</span>
+            </a>
           </li>
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-villa-valley-view-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-villa-valley-view.webp">
+              <img src="images/site/site-2026-03-22-villa-valley-view-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Villa under construction on a slope with forested mountains across the valley">
-              <figcaption>Mountain views</figcaption>
-            </figure>
+              <span class="g-cap">Mountain views</span>
+            </a>
           </li>
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-villa-open-frame-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-villa-open-frame.webp">
+              <img src="images/site/site-2026-03-22-villa-open-frame-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Angled white villa frame with open glazing bays rising above tea bushes">
-              <figcaption>Villa frame</figcaption>
-            </figure>
+              <span class="g-cap">Villa frame</span>
+            </a>
           </li>
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-villa-gable-brickwork-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-villa-gable-brickwork.webp">
+              <img src="images/site/site-2026-03-22-villa-gable-brickwork-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Gabled villa with exposed brickwork and a concrete roof slab">
-              <figcaption>Brickwork and roof slab</figcaption>
-            </figure>
+              <span class="g-cap">Brickwork and roof slab</span>
+            </a>
           </li>
           <li>
-            <figure>
-              <img src="images/site/site-2026-03-22-blockwork-walls-sm.webp" width="400" height="533" loading="lazy"
+            <a class="g-item" data-group="site" href="images/site/site-2026-03-22-blockwork-walls.webp">
+              <img src="images/site/site-2026-03-22-blockwork-walls-sm.webp" width="400" height="533" loading="lazy" decoding="async" fetchpriority="low"
                 alt="Laterite block walls rising for a villa, trees and a hillside road behind">
-              <figcaption>Walls going up</figcaption>
-            </figure>
+              <span class="g-cap">Walls going up</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -429,28 +558,28 @@
           <figure class="villa villa-a reveal">
             <img src="images/site/render-2bhk-pool-villa.webp"
               srcset="images/site/render-2bhk-pool-villa-sm.webp 560w, images/site/render-2bhk-pool-villa.webp 960w"
-              sizes="(max-width: 900px) 92vw, 55vw" width="960" height="958" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 55vw" width="960" height="958" loading="lazy" decoding="async"
               alt="Render of the 2BHK pool villa, a timber-framed glass pavilion on a raised terrace above a garden">
             <figcaption><strong>2BHK Pool Villa</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-b reveal">
             <img src="images/site/render-single-bed-villa.webp"
               srcset="images/site/render-single-bed-villa-sm.webp 560w, images/site/render-single-bed-villa.webp 960w"
-              sizes="(max-width: 900px) 92vw, 40vw" width="960" height="925" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 40vw" width="960" height="925" loading="lazy" decoding="async"
               alt="Render of the single bed villa, an angular cantilevered form with a glass front and balcony">
             <figcaption><strong>Single Bed Villa</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-c reveal">
             <img src="images/site/render-open-pool-deck.webp"
               srcset="images/site/render-open-pool-deck-sm.webp 640w, images/site/render-open-pool-deck.webp 1280w"
-              sizes="(max-width: 900px) 92vw, 40vw" width="1280" height="555" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 40vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Render of the open pool with a timber deck beside a pitched-roof pavilion">
             <figcaption><strong>Open pool</strong><span>Architect render</span></figcaption>
           </figure>
           <figure class="villa villa-d reveal">
             <img src="images/site/render-clubhouse-entrance.webp"
               srcset="images/site/render-clubhouse-entrance-sm.webp 640w, images/site/render-clubhouse-entrance.webp 1280w"
-              sizes="(max-width: 900px) 92vw, 55vw" width="1280" height="555" loading="lazy"
+              sizes="(max-width: 900px) 92vw, 55vw" width="1280" height="555" loading="lazy" decoding="async"
               alt="Render of the clubhouse entrance with a folded roof, stone wall and landscaped driveway">
             <figcaption><strong>Grand clubhouse</strong><span>Entrance, dining and recreation. Architect render</span></figcaption>
           </figure>
@@ -468,32 +597,32 @@
         </p>
 
         <ul class="mosaic" id="galleryGrid">
-          <li class="m-a reveal"><a href="images/site/site-2026-03-22-villa-tea-terrace.webp" class="g-item">
-              <img src="images/site/site-2026-03-22-villa-tea-terrace-sm.webp" width="400" height="533" loading="lazy"
+          <li class="m-a reveal"><a href="images/site/site-2026-03-22-villa-tea-terrace.webp" class="g-item" data-group="gallery">
+              <img src="images/site/site-2026-03-22-villa-tea-terrace-sm.webp" width="400" height="533" loading="lazy" decoding="async"
                 alt="Villa under construction above terraces of tea bushes and red earth">
               <span class="g-cap">Above the tea terraces. Photo, March 2026</span></a></li>
-          <li class="m-b reveal"><a href="images/site/render-hillside-villa.webp" class="g-item">
-              <img src="images/site/render-hillside-villa-sm.webp" width="640" height="280" loading="lazy"
+          <li class="m-b reveal"><a href="images/site/render-hillside-villa.webp" class="g-item" data-group="gallery">
+              <img src="images/site/render-hillside-villa-sm.webp" width="640" height="280" loading="lazy" decoding="async"
                 alt="Render of a single villa on stilts in misty forest">
               <span class="g-cap">Villa in the mist. Render</span></a></li>
-          <li class="m-c reveal"><a href="images/site/site-2026-03-22-villa-gable-trees.webp" class="g-item">
-              <img src="images/site/site-2026-03-22-villa-gable-trees-sm.webp" width="400" height="533" loading="lazy"
+          <li class="m-c reveal"><a href="images/site/site-2026-03-22-villa-gable-trees.webp" class="g-item" data-group="gallery">
+              <img src="images/site/site-2026-03-22-villa-gable-trees-sm.webp" width="400" height="533" loading="lazy" decoding="async"
                 alt="Gabled villa shell behind tall silver oak trees on the slope">
               <span class="g-cap">Among the silver oaks. Photo, March 2026</span></a></li>
-          <li class="m-d reveal"><a href="images/site/render-clubhouse-aerial.webp" class="g-item">
-              <img src="images/site/render-clubhouse-aerial-sm.webp" width="640" height="277" loading="lazy"
+          <li class="m-d reveal"><a href="images/site/render-clubhouse-aerial.webp" class="g-item" data-group="gallery">
+              <img src="images/site/render-clubhouse-aerial-sm.webp" width="640" height="277" loading="lazy" decoding="async"
                 alt="Aerial render of the clubhouse with a folded roof, reached by a curving driveway">
               <span class="g-cap">Clubhouse complex. Render</span></a></li>
-          <li class="m-e reveal"><a href="images/site/render-estate-open-pool-aerial.webp" class="g-item">
-              <img src="images/site/render-estate-open-pool-aerial-sm.webp" width="640" height="276" loading="lazy"
+          <li class="m-e reveal"><a href="images/site/render-estate-open-pool-aerial.webp" class="g-item" data-group="gallery">
+              <img src="images/site/render-estate-open-pool-aerial-sm.webp" width="640" height="276" loading="lazy" decoding="async"
                 alt="Aerial render of the clubhouse and open pool with villas on the slope above">
               <span class="g-cap">Estate with open pool. Render</span></a></li>
-          <li class="m-f reveal"><a href="images/site/site-2026-03-22-villa-roof-slab.webp" class="g-item">
-              <img src="images/site/site-2026-03-22-villa-roof-slab-sm.webp" width="400" height="533" loading="lazy"
+          <li class="m-f reveal"><a href="images/site/site-2026-03-22-villa-roof-slab.webp" class="g-item" data-group="gallery">
+              <img src="images/site/site-2026-03-22-villa-roof-slab-sm.webp" width="400" height="533" loading="lazy" decoding="async"
                 alt="Brick villa with a sloping concrete roof slab, mountains behind">
               <span class="g-cap">Roof slab cast. Photo, March 2026</span></a></li>
-          <li class="m-g reveal"><a href="images/site/site-2026-03-22-villa-shell.webp" class="g-item">
-              <img src="images/site/site-2026-03-22-villa-shell-sm.webp" width="400" height="533" loading="lazy"
+          <li class="m-g reveal"><a href="images/site/site-2026-03-22-villa-shell.webp" class="g-item" data-group="gallery">
+              <img src="images/site/site-2026-03-22-villa-shell-sm.webp" width="400" height="533" loading="lazy" decoding="async"
                 alt="White villa shell perched on a slope with tea bushes below">
               <span class="g-cap">Villa shell. Photo, March 2026</span></a></li>
         </ul>
@@ -507,7 +636,7 @@
         <div class="film-frame" id="youtubePlayer">
           <a class="film-poster" id="youtubeThumb" href="https://www.youtube.com/watch?v=F8X-mcABL8U" target="_blank"
             rel="noopener" aria-label="Play video: Baya Weaver Resort, Vythiri, Wayanad, Kerala (opens YouTube)">
-            <img src="images/site/render-villa-cluster.webp" width="1280" height="557" loading="lazy" alt="">
+            <img src="images/site/render-villa-cluster.webp" width="1280" height="557" loading="lazy" decoding="async" alt="">
             <span class="film-play" aria-hidden="true"><svg class="i"><use href="images/icons.svg#i-play"></use></svg></span>
             <span class="film-note">Plays from YouTube</span>
           </a>
@@ -549,33 +678,86 @@
                 <dd>About 800 m above sea level. Cool mornings, a highland monsoon and crisp winter skies.</dd>
               </div>
             </dl>
-            <a href="https://maps.app.goo.gl/iyfaohvVfE9AvDzk8" target="_blank" rel="noopener" class="btn btn-primary">
-              Get directions
-              <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-up-right"></use></svg>
-            </a>
+            <div class="location-actions">
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=11.535045,76.038681" target="_blank"
+                rel="noopener" class="btn btn-primary">
+                <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-navigation-arrow"></use></svg>
+                Get directions
+              </a>
+              <a href="https://maps.app.goo.gl/iyfaohvVfE9AvDzk8" target="_blank" rel="noopener" class="btn btn-ghost">
+                Open in Google Maps
+                <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-up-right"></use></svg>
+              </a>
+            </div>
           </div>
 
           <div class="map-frame reveal" id="mapFrame">
             <div class="map-facade">
               <svg class="i map-pin" aria-hidden="true"><use href="images/icons.svg#i-map-pin"></use></svg>
               <p class="map-coords">11.5350° N, 76.0387° E</p>
-              <p class="map-note">The map loads from Google when you ask for it.</p>
+              <p class="map-note">The map loads from Google only when you ask for it.</p>
               <button class="btn btn-ghost" type="button" id="loadMap">Show map</button>
             </div>
           </div>
         </div>
 
         <h3 class="nearby-title">Nearby</h3>
+        <p class="nearby-note">Independent attractions in Wayanad, not part of the resort. Check opening times and access before you go.</p>
         <ul class="nearby">
-          <li class="reveal"><strong>Chembra Peak</strong><span>Wayanad's highest summit. The trek to its heart-shaped lake is
-              iconic.</span></li>
-          <li class="reveal"><strong>Banasura Sagar Dam</strong><span>India's largest earthen dam, ringed by misty hills.</span></li>
-          <li class="reveal"><strong>Edakkal Caves</strong><span>Stone-age petroglyphs high on Ambukuthi Mala.</span></li>
-          <li class="reveal"><strong>Soochipara Falls</strong><span>A 200 ft cascade through rainforest, at its best after the
-              monsoon.</span></li>
-          <li class="reveal"><strong>Ennooru Tribal Heritage Village</strong><span>A place to learn about Adivasi culture and
-              traditions.</span></li>
+          <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Chembra+Peak%2C+Wayanad" target="_blank" rel="noopener"><strong>Chembra Peak</strong><span>Wayanad's highest summit. The trek to its heart-shaped lake is
+              iconic.</span></a></li>
+          <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Banasura+Sagar+Dam%2C+Wayanad" target="_blank" rel="noopener"><strong>Banasura Sagar Dam</strong><span>India's largest earthen dam, ringed by misty hills.</span></a></li>
+          <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Edakkal+Caves%2C+Wayanad" target="_blank" rel="noopener"><strong>Edakkal Caves</strong><span>Stone-age petroglyphs high on Ambukuthi Mala.</span></a></li>
+          <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Soochipara+Falls%2C+Wayanad" target="_blank" rel="noopener"><strong>Soochipara Falls</strong><span>A 200 ft cascade through rainforest, at its best after the
+              monsoon.</span></a></li>
+          <li class="reveal"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ennooru+Tribal+Heritage+Village%2C+Wayanad" target="_blank" rel="noopener"><strong>Ennooru Tribal Heritage Village</strong><span>A place to learn about Adivasi culture and
+              traditions.</span></a></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="section-title" id="faq-title">Questions, <em>answered</em></h2>
+          <p class="body-copy">The short version of what people ask most. For anything else, ask the team directly.</p>
+          <a href="#contact" class="btn btn-ghost faq-cta">Ask a question <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-right"></use></svg></a>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary><span>Is Baya Weaver Resorts open yet?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Not yet. The resort is under construction in Old Vythiri, Wayanad, with a target opening of Q4 2026. The latest site update on this page is dated 22 March 2026.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>Can I book a stay?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Bookings are not open yet. Register your interest to hear first when they open, or send a future-stay enquiry through the form.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>Can I visit the site before it opens?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Yes. Choose “Book a site visit” in the enquiry form and add your preferred dates, and the team will get back to you to arrange it.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>How many villas are there, and which have private pools?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>There are 14 villas on 3.27 acres. Four villas have their own private plunge pools, and one open pool serves the wider resort. The designs shown include the 2BHK Pool Villa and the Single Bed Villa.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>Where is the resort and how do I get there?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Old Vythiri, Wayanad District, Kerala 673576, on the National Highway corridor. Calicut International Airport is about 80 km away (around 90 minutes by road). By road it is about 70 km from Kozhikode, 90 km from Mysore and 270 km from Bangalore via NH766.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>Who designed the resort?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Sumayyasalih Architects. Images marked “render” on this site are their architectural renders of proposed designs, not photographs of finished buildings.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>Can I own or invest in a villa?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>The team welcomes enquiries about villa ownership and investment and shares details directly. Nothing on this website is an offer. Choose “Villa ownership” or “Investment opportunity” in the form, or request the brochure.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span>How do I get construction updates?</span><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-plus"></use></svg></summary>
+            <p>Register your email in the “Be the first to know” section to receive monthly construction updates. You can unsubscribe at any time.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -592,6 +774,8 @@
           <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required
             autocomplete="email" aria-describedby="newsletterStatus">
           <input type="hidden" name="_subject" value="Register interest: Baya Weaver Resorts">
+          <span class="visually-hidden" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1"
+              autocomplete="off" aria-label="Leave empty"></span>
           <button type="submit" class="btn btn-primary">Register</button>
         </form>
         <p class="form-status" id="newsletterStatus" role="status" aria-live="polite"></p>
@@ -602,6 +786,8 @@
           <li><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-check"></use></svg>Monthly site updates</li>
           <li><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-check"></use></svg>Investment brochure</li>
         </ul>
+        <p class="form-note register-note">We only use your email to send Baya Weaver updates, and you can unsubscribe at
+          any time. See our <a href="privacy.html">privacy policy</a>.</p>
       </div>
     </section>
 
@@ -623,6 +809,15 @@
                 <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-map-pin"></use></svg>
                 <span><small>Location</small>Old Vythiri, Wayanad, Keralam 673576</span></a></li>
           </ul>
+          <div class="contact-actions">
+            <button type="button" class="btn btn-ghost btn-sm" data-copy="bayaweaverresort@gmail.com"
+              data-copied="Email address copied."><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-copy"></use></svg>Copy email</button>
+            <a class="btn btn-ghost btn-sm" href="baya-weaver-resorts.vcf" download><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-download-simple"></use></svg>Save contact</a>
+            <button type="button" class="btn btn-ghost btn-sm" id="shareBtn"><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-share-network"></use></svg>Share</button>
+          </div>
+          <p class="form-status" id="actionStatus" role="status" aria-live="polite"></p>
+          <p class="notice">This website does not take bookings or payments. If anyone asks you to pay in our name,
+            please check with us by email first.</p>
         </div>
 
         <div class="contact-form reveal">
@@ -646,7 +841,7 @@
               </div>
               <div class="field">
                 <label for="cphone">Phone <span class="optional">(optional)</span></label>
-                <input type="tel" id="cphone" name="phone" autocomplete="tel" placeholder="+91">
+                <input type="tel" id="cphone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91">
               </div>
             </div>
             <div class="field">
@@ -662,6 +857,10 @@
                 <option value="media">Media or press</option>
                 <option value="other">Other</option>
               </select>
+            </div>
+            <div class="field" id="visitDateField" hidden>
+              <label for="visit-date">Preferred visit date <span class="optional">(optional)</span></label>
+              <input type="date" id="visit-date" name="preferred_visit_date">
             </div>
             <div class="field">
               <label for="cmessage">Message</label>
@@ -680,7 +879,8 @@
               <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-right"></use></svg>
             </button>
             <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
-            <p class="form-note">Your message is delivered to our team by email through Formspree.</p>
+            <p class="form-note">Your message reaches our team by email through Formspree. We use your details only to
+              reply to your enquiry. See our <a href="privacy.html">privacy policy</a>.</p>
           </form>
         </div>
       </div>
@@ -704,6 +904,7 @@
           <li><a href="#villas">The villas</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#location">Location</a></li>
+          <li><a href="#faq">Questions</a></li>
         </ul>
       </div>
       <div>
@@ -719,15 +920,28 @@
     </div>
     <div class="wrap footer-bottom">
       <p>© 2026 Baya Weaver Resorts, Old Vythiri, Wayanad, Keralam.</p>
-      <p>Images marked "render" show proposed designs, not completed buildings. <a href="sitemap.xml">Sitemap</a></p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="accessibility.html">Accessibility</a>
+      </nav>
+      <p class="footer-note">Images marked “render” show proposed designs, not completed buildings.</p>
     </div>
   </footer>
+
+  <!-- Mobile action bar, shown after the hero on small screens -->
+  <div class="action-bar" id="actionBar" inert>
+    <a href="#contact" class="btn btn-primary" data-enquiry="site-visit">Book a site visit</a>
+    <a href="#newsletter-section" class="btn btn-ghost">Register interest</a>
+  </div>
+
+  <a href="#top" class="to-top" id="toTop" aria-label="Back to top" inert><svg class="i" aria-hidden="true"><use href="images/icons.svg#i-arrow-up"></use></svg></a>
 
   <!-- Gallery lightbox -->
   <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
     <figure>
       <img id="lightboxImg" src="" alt="">
-      <figcaption id="lightboxCap"></figcaption>
+      <figcaption><span id="lightboxCap"></span> <span class="lb-count" id="lightboxCount"></span></figcaption>
     </figure>
     <button class="icon-btn lb-close" type="button" data-lb="close" aria-label="Close">
       <svg class="i" aria-hidden="true"><use href="images/icons.svg#i-x"></use></svg>
@@ -740,7 +954,7 @@
     </button>
   </dialog>
 
-  <script src="js/main.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
 </body>
 
 </html>

@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://afinz0z.github.io/Baya-Weaver-Website/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-villa-facade.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-valley-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-master-plan-aerial.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-hillside-villas.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-plastered.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-roofed.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-frame-columns.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-valley-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-open-frame.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-gable-brickwork.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-blockwork-walls.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-2bhk-pool-villa.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-single-bed-villa.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-open-pool-deck.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-clubhouse-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-tea-terrace.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-hillside-villa.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-gable-trees.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-clubhouse-aerial.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-estate-open-pool-aerial.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-roof-slab.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-villa-shell.webp</image:loc></image:image>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-villa-cluster.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://afinz0z.github.io/Baya-Weaver-Website/privacy.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://afinz0z.github.io/Baya-Weaver-Website/terms.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://afinz0z.github.io/Baya-Weaver-Website/accessibility.html</loc>
     <lastmod>2026-09-28</lastmod>
   </url>
 </urlset>
