@@ -4,7 +4,8 @@
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://afinz0z.github.io/Baya-Weaver-Website/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-01</lastmod>
+    <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-entrance-gate.webp</image:loc></image:image>
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-villa-facade.webp</image:loc></image:image>
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/site-2026-03-22-valley-view.webp</image:loc></image:image>
     <image:image><image:loc>https://afinz0z.github.io/Baya-Weaver-Website/images/site/render-master-plan-aerial.webp</image:loc></image:image>
