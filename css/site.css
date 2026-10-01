@@ -87,6 +87,8 @@
   --ok: #7cc48a;
   --shadow: 0 24px 60px -24px rgba(3, 10, 6, 0.7);
   --nav-bg: rgba(15, 22, 18, 0.72);
+  --logo-sub: #cbbf9f;
+  --logo-rule: #b89a62;
   --scrim: linear-gradient(to top, rgba(8, 14, 10, 0.78), rgba(8, 14, 10, 0) 70%);
   color-scheme: dark;
 }
@@ -106,6 +108,8 @@
   --ok: #2e7a3e;
   --shadow: 0 24px 60px -28px rgba(22, 40, 28, 0.35);
   --nav-bg: rgba(238, 240, 232, 0.8);
+  --logo-sub: #776b4f;
+  --logo-rule: #c2a473;
   color-scheme: light;
 }
 
@@ -398,35 +402,28 @@ textarea {
   color: var(--accent-ink);
 }
 
-.brand-mark {
-  width: 46px;
-  height: auto;
-  color: var(--gold);
+/* The full logo lockup; RESORTS and its rules follow the theme */
+.brand-logo {
+  display: block;
+  height: 54px;
+  width: auto;
+  aspect-ratio: 900.2 / 261.8;
   flex-shrink: 0;
+  overflow: visible;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  line-height: 1;
+@media (max-width: 400px) {
+  .brand-logo {
+    height: 46px;
+  }
 }
 
-/* Echoes the logo: spaced capitals, RESORTS set wide beneath */
-.brand-name {
-  font-family: var(--font-body);
-  font-size: 0.98rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
+.brand-resorts {
+  fill: var(--logo-sub);
 }
 
-.brand-sub {
-  font-size: 0.62rem;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
-  color: var(--muted);
+.brand-rules {
+  fill: var(--logo-rule);
 }
 
 .nav-links {
@@ -1786,7 +1783,7 @@ figcaption {
 }
 
 .footer-logo img {
-  width: 190px;
+  width: 250px;
   height: auto;
 }
 
@@ -3012,22 +3009,22 @@ html:not(.js) .villa figcaption::before {
   }
 
   /* 4. Logo shards assemble */
-  .navbar .brand-mark path {
+  .navbar .brand-bird path {
     transform-box: fill-box;
     transform-origin: center;
     animation: shard-in 0.9s var(--ease) both;
   }
 
-  .navbar .brand-mark path:nth-child(1) { --dx: -14px; --dy: -10px; --r: -24deg; animation-delay: 0.05s; }
-  .navbar .brand-mark path:nth-child(2) { --dx: 12px; --dy: -12px; --r: 18deg; animation-delay: 0.1s; }
-  .navbar .brand-mark path:nth-child(3) { --dx: -10px; --dy: 12px; --r: 30deg; animation-delay: 0.15s; }
-  .navbar .brand-mark path:nth-child(4) { --dx: 14px; --dy: 8px; --r: -20deg; animation-delay: 0.2s; }
-  .navbar .brand-mark path:nth-child(5) { --dx: -12px; --dy: -6px; --r: 16deg; animation-delay: 0.25s; }
-  .navbar .brand-mark path:nth-child(6) { --dx: 10px; --dy: 14px; --r: -28deg; animation-delay: 0.3s; }
-  .navbar .brand-mark path:nth-child(7) { --dx: -16px; --dy: 4px; --r: 22deg; animation-delay: 0.35s; }
-  .navbar .brand-mark path:nth-child(8) { --dx: 16px; --dy: -4px; --r: -14deg; animation-delay: 0.4s; }
-  .navbar .brand-mark path:nth-child(9) { --dx: -6px; --dy: 16px; --r: 26deg; animation-delay: 0.45s; }
-  .navbar .brand-mark path:nth-child(10) { --dx: 8px; --dy: -16px; --r: -18deg; animation-delay: 0.5s; }
+  .navbar .brand-bird path:nth-child(1) { --dx: -14px; --dy: -10px; --r: -24deg; animation-delay: 0.05s; }
+  .navbar .brand-bird path:nth-child(2) { --dx: 12px; --dy: -12px; --r: 18deg; animation-delay: 0.1s; }
+  .navbar .brand-bird path:nth-child(3) { --dx: -10px; --dy: 12px; --r: 30deg; animation-delay: 0.15s; }
+  .navbar .brand-bird path:nth-child(4) { --dx: 14px; --dy: 8px; --r: -20deg; animation-delay: 0.2s; }
+  .navbar .brand-bird path:nth-child(5) { --dx: -12px; --dy: -6px; --r: 16deg; animation-delay: 0.25s; }
+  .navbar .brand-bird path:nth-child(6) { --dx: 10px; --dy: 14px; --r: -28deg; animation-delay: 0.3s; }
+  .navbar .brand-bird path:nth-child(7) { --dx: -16px; --dy: 4px; --r: 22deg; animation-delay: 0.35s; }
+  .navbar .brand-bird path:nth-child(8) { --dx: 16px; --dy: -4px; --r: -14deg; animation-delay: 0.4s; }
+  .navbar .brand-bird path:nth-child(9) { --dx: -6px; --dy: 16px; --r: 26deg; animation-delay: 0.45s; }
+  .navbar .brand-bird path:nth-child(10) { --dx: 8px; --dy: -16px; --r: -18deg; animation-delay: 0.5s; }
 
   /* 5. Hero headline, one line at a time */
   .hero-copy > .hero-title {

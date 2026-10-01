@@ -15,8 +15,8 @@ Published with GitHub Pages from the `main` branch at https://afinz0z.github.io/
 | `js/theme.js` | Sets the light or dark theme before first paint |
 | `js/main.js` | All behaviour. Each feature checks its own elements exist |
 | `images/site/` | Web images (WebP). Each has a full size and a `-sm` size |
-| `images/logo.svg`, `images/logo-reverse.svg` | The full logo, traced from the owner's artwork: for light and for dark backgrounds |
-| `images/logo-mark.svg`, `images/favicon.svg`, `favicon.ico`, `images/icon-*.png`, `images/logo.png` | Bird mark, favicons, app icons and a transparent logo for search engines. Brand gold is #E7BA44 |
+| `images/logo.svg`, `images/logo-reverse.svg` | The full horizontal logo, traced from the owner's new artwork (Oct 2026) with its metallic gold gradients: for light and for dark backgrounds. The header carries the same lockup inline |
+| `images/logo-mark.svg`, `images/favicon.svg`, `favicon.ico`, `images/icon-*.png`, `images/logo.png` | Bird mark, favicons, app icons and a transparent logo for search engines. Brand gold is #E7BA44; the logo itself uses gradients from #925a08 to #ffe48e |
 | `images/icons.svg` | Icon sprite (Phosphor Icons, MIT) |
 | `fonts/` | Self-hosted Cormorant Garamond and DM Sans (SIL OFL) |
 | `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt`, `site.webmanifest` | Search, AI-assistant and app metadata |
