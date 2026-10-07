@@ -55,6 +55,8 @@ When one changes, search the repository for it and update every match, including
 - Name files by what they show, e.g. `site-2026-03-22-villa-plastered.webp` for site photos (with the date taken)
   or `render-open-pool-deck.webp` for architect renders.
 - Export WebP at about 1280 px wide for renders and 720 px for phone photos, plus a `-sm` copy (640 or 400 px).
+- The home hero render fills the screen, so it also has `-1920` and `-2560` copies, upscaled from the architect's
+  original. If you replace it with an image of a different shape, update the `40/17` and `236vh` in its `sizes`.
 - Always set `width`, `height` and `alt`. Label renders as renders and date site photos in the caption.
 
 ## Forms

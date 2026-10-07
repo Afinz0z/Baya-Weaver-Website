@@ -458,7 +458,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=12">
+  <link rel="stylesheet" href="css/site.css?v=13">
 </head>
 
 <body>
@@ -511,23 +511,21 @@
     <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow hero-eyebrow">Old Vythiri, Wayanad · Target opening Q4 2026</p>
+        <p class="eyebrow hero-eyebrow"><span>Old Vythiri, Wayanad</span><span class="sep"> · </span><span>Target opening Q4 2026</span></p>
         <h1 class="hero-title" id="hero-title"><span class="line">Baya <em>Weaver</em></span><br><span class="line">Resorts</span></h1>
-        <p class="hero-sub">14 private villas on 3.27 acres of Highland Tea Estate. Four with their own pools.</p>
+        <p class="hero-sub">14 private villas on 3.27 acres of Highland Tea Estate. <span>Four with their own pools.</span></p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary" data-enquiry="site-visit">Book a site visit</a>
           <a href="#newsletter-section" class="btn btn-ghost">Register interest</a>
         </div>
       </div>
+      <!-- The render covers the screen, so on anything narrower than its 40:17 shape it is drawn about 2.36 screen heights wide -->
       <figure class="hero-media">
-        <picture>
-          <source media="(max-width: 900px)" srcset="images/site/render-villa-facade-m.webp" width="720" height="540">
-          <img src="images/site/render-villa-facade.webp"
-          srcset="images/site/render-villa-facade-sm.webp 560w, images/site/render-villa-facade.webp 960w"
-          sizes="(max-width: 900px) 92vw, 52vw" width="960" height="960" fetchpriority="high"
-          alt="Architect render of a Baya Weaver villa with a floor-to-ceiling glass front and timber screens, set into a green hillside">
-        </picture>
-        <figcaption>Villa exterior. Architect render, Sumayyasalih Architects.</figcaption>
+        <img src="images/site/render-hillside-villas-1920.webp"
+          srcset="images/site/render-hillside-villas.webp 1280w, images/site/render-hillside-villas-1920.webp 1920w, images/site/render-hillside-villas-2560.webp 2560w"
+          sizes="(max-aspect-ratio: 40/17) 236vh, 100vw" width="2560" height="1088" fetchpriority="high"
+          alt="Architect render of villas stepping down a tea-covered hillside above the valley">
+        <figcaption>Hillside villas. Architect render, Sumayyasalih Architects.</figcaption>
       </figure>
     </section>
 
@@ -639,11 +637,11 @@
           </article>
 
           <figure class="bento-img bento-img-b reveal">
-            <img src="images/site/render-hillside-villas.webp"
-              srcset="images/site/render-hillside-villas-sm.webp 640w, images/site/render-hillside-villas-md.webp 800w, images/site/render-hillside-villas.webp 1280w"
-              sizes="(max-width: 900px) 92vw, 46vw" width="1280" height="544" loading="lazy" decoding="async"
-              alt="Render of villas stepping down a tea-covered hillside above the valley">
-            <figcaption>Hillside villas. Architect render.</figcaption>
+            <img src="images/site/render-villa-facade.webp"
+              srcset="images/site/render-villa-facade-sm.webp 560w, images/site/render-villa-facade.webp 960w"
+              sizes="(max-width: 900px) 92vw, 46vw" width="960" height="960" loading="lazy" decoding="async"
+              alt="Architect render of a Baya Weaver villa with a floor-to-ceiling glass front and timber screens, set into a green hillside">
+            <figcaption>Villa exterior. Architect render.</figcaption>
           </figure>
         </div>
       </div>
